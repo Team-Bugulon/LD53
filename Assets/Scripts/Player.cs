@@ -23,7 +23,18 @@ public class Player : MonoBehaviour
         else if (ctx.canceled)
         {
             movementInput = Vector2.zero;
+            direction = direction % 360;
         }
+    }
+
+    public static Vector2 RadianToVector2(float radian)
+    {
+        return new Vector2(Mathf.Cos(radian), Mathf.Sin(radian));
+    }
+
+    public static Vector2 DegreeToVector2(float degree)
+    {
+        return RadianToVector2(degree * Mathf.Deg2Rad);
     }
 
     private void Start()
@@ -37,15 +48,25 @@ public class Player : MonoBehaviour
         if (movementInput != Vector2.zero)
         {
             //get vector angle from movementInput
-            //var newDirection = Vector2.Angle(Vector2.right, movementInput);
+            var newDirection = Vector2.SignedAngle(Vector2.right, movementInput);
 
-            //direction = Mathf.Lerp(direction, newDirection, turnSpeed);
+            direction = Mathf.LerpAngle(direction, newDirection, turnSpeed);
 
-            rb.velocity = movementInput.normalized * moveSpeed;
+            rb.velocity = DegreeToVector2(direction) * moveSpeed;
+            Debug.Log("angle " + direction);
         }
-
-        //rb.velocity = (Quaternion.AngleAxis(direction, Vector3.forward) * Vector3.right).normalized * moveSpeed;
-        //rb.velocity = (Vector2)(Quaternion.Euler(0, 0, direction) * Vector2.right).normalized * moveSpeed;
     }
 
+
+    void OnDrawGizmos()
+    {
+        if (Application.isPlaying)
+        {
+            Gizmos.color = Color.green;
+            Gizmos.DrawLine(transform.position, (Vector3)rb.velocity.normalized + transform.position);
+
+            Gizmos.color = Color.red;
+            Gizmos.DrawLine(transform.position, (Vector3)movementInput.normalized + transform.position);
+        }
+    }
 }

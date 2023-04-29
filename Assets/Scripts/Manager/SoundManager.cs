@@ -122,6 +122,7 @@ public class SoundManager : MonoBehaviour
         music.DOComplete();
         music.DOFade(.8f, 1).SetEase(Ease.Linear).SetUpdate(true);
     }
+    
     public void MusicOut()
     {
         music.DOKill();
