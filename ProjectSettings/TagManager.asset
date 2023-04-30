@@ -3,7 +3,8 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Hazard
   layers:
   - Default
   - TransparentFX
@@ -11,8 +12,8 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
+  - Player
+  - Hazard
   - 
   - 
   - 
@@ -41,8 +42,14 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: World
+    uniqueID: 4273373401
+    locked: 0
   - name: Entities
     uniqueID: 674839683
+    locked: 0
+  - name: Food
+    uniqueID: 2283578691
     locked: 0
   - name: UI
     uniqueID: 2488415977
