@@ -1,6 +1,8 @@
+using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
 public enum PlateState
 {
@@ -18,6 +20,7 @@ public class Plate : MonoBehaviour
     [Header("References")]
     [SerializeField] SpriteRenderer plateRenderer;
     [SerializeField] SpriteRenderer mealRenderer;
+    [SerializeField] ParticleSystem ps;
 
     GameObject magnetizeTarget;
     Vector2 magnetizeOffset;
@@ -76,5 +79,55 @@ public class Plate : MonoBehaviour
     {
         this.dishType = dishType;
         mealRenderer.sprite = GameManager.i.dishSprites[dishType];
+    }
+
+    public void Drop()
+    {
+        float offset = transform.localPosition.y;
+        if (offset == 0)
+        {
+            Break(false);
+        }
+        else
+        {
+            Break(true);
+        }
+        GetComponent<CircleCollider2D>().enabled = false;
+        transform.parent = transform.parent.parent.parent.parent;
+        transform.DOMoveY(-2 - offset, .4f).SetRelative(true).SetEase(Ease.InQuart);
+        //Invoke("Break", .4f);
+    }
+
+    void Break(bool hard = false)
+    {
+        if (hard)
+        {
+            Invoke("BreakHard", .4f);
+        } else
+        {
+            Invoke("BreakSoft", .4f);
+        }
+    }
+
+    void BreakHard()
+    {
+        plateRenderer.enabled = false;
+        ps.Play();
+        GameManager.i.BreakPlate(dishType);
+
+        mealRenderer.enabled = false;
+        Destroy(gameObject, 1f);
+    }
+
+    void BreakSoft()
+    {
+        plateRenderer.enabled = false;
+        ps.Play();
+        GameManager.i.BreakPlate(dishType);
+
+        mealRenderer.sprite = GameManager.i.sludgeSprites[Random.Range(0, GameManager.i.sludgeSprites.Count)];
+        mealRenderer.sortingLayerName = "Entities";
+        mealRenderer.sortingOrder = -1;
+        this.enabled = false;
     }
 }

@@ -1376,6 +1376,7 @@ MonoBehaviour:
   player: {fileID: 1936069941}
   platePrefab: {fileID: 5151868280500828515, guid: 97eedf7814dac3540897858c3e1f55b4, type: 3}
   dishSprites: []
+  sludgeSprites: []
   customersRat:
   - {fileID: 9100000, guid: 5f91458fb21ce4848b645854798f451d, type: 2}
   - {fileID: 9100000, guid: 0c8c7f3f252a8e94fbfee148f0021666, type: 2}

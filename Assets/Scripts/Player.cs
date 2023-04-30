@@ -321,6 +321,13 @@ public class Player : MonoBehaviour
             StartCoroutine(StunTimer(-collisionDirection * collisionForce));
             Camera_Manager.i.ShakeScreen(duration:.65f);
             //StartCoroutine(CooldownTimer());
+
+            foreach (Plate plate in platesHeld)
+            {
+                plate.Drop();
+            }
+
+            platesHeld = new List<Plate>();
         }
     }
 

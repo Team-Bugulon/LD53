@@ -35,6 +35,7 @@ public class GameManager : MonoBehaviour
     
     [Header("Libs")]
     public List<Sprite> dishSprites;
+    public List<Sprite> sludgeSprites;
     public List<RuntimeAnimatorController> customersRat;
 
     int wave = 0;
@@ -45,6 +46,9 @@ public class GameManager : MonoBehaviour
     {
         var objects = UnityEditor.AssetDatabase.LoadAllAssetsAtPath("Assets/Sprites/Gameplay/Dish/dish.png");
         dishSprites = objects.Where(q => q is Sprite).Cast<Sprite>().ToList();
+
+        var objects2 = UnityEditor.AssetDatabase.LoadAllAssetsAtPath("Assets/Sprites/Gameplay/sludge.png");
+        sludgeSprites = objects2.Where(q => q is Sprite).Cast<Sprite>().ToList();
 
         UpdateWave();
 
@@ -110,5 +114,10 @@ public class GameManager : MonoBehaviour
     {
         var plate = Instantiate(platePrefab);
         plate.SetDish(dishType);
+    }
+
+    public void BreakPlate(int dishType)
+    {
+        SpawnPlate(dishType);
     }
 }
