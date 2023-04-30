@@ -70,6 +70,7 @@ public class Customer : MonoBehaviour
         {
             state = CustomerState.Ordering;
             speech.Ordering();
+            assignedTable.EnableCircle();
         }
     }
     public void Deliver()

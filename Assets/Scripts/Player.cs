@@ -161,6 +161,7 @@ public class Player : MonoBehaviour
                 platesHeld.Remove(plate);
                 plate.transform.parent = customer.assignedPlateContainer;
                 plate.Magnetize(customer.assignedPlateContainer.gameObject, Vector2.zero, .5f);
+                plate.SetRenderingOrder(-1);
 
                 UpdatePlatesPos();
 
@@ -176,27 +177,31 @@ public class Player : MonoBehaviour
         //get all plates in plateContainerL
         List<Plate> plateL = plateContainerL.GetComponentsInChildren<Plate>().ToList();
         //sort plates by local position y
-        int absoluteY = plateL.Count;
+        //int absoluteY = plateL.Count;
+        int absoluteY = 0;
         foreach (Plate plate in plateL)
         {
-            absoluteY--;
+            plate.SetRenderingOrder(absoluteY);
             float localX = (absoluteY % 2) * 4 * pixelSize;
             float localY = absoluteY * 8 * pixelSize;
             Vector2 localPos = new Vector2(localX, localY);
             plate.transform.localPosition = localPos;
+            absoluteY++;
         }
 
         //get all plates in plateContainerL
         List<Plate> plateR = plateContainerR.GetComponentsInChildren<Plate>().ToList();
         //sort plates by local position y
-        absoluteY = plateR.Count;
+        //absoluteY = plateR.Count;
+        absoluteY = 0;
         foreach (Plate plate in plateR)
         {
-            absoluteY--;
+            plate.SetRenderingOrder(absoluteY);
             float localX = (absoluteY % 2) * 4 * pixelSize;
             float localY = absoluteY * 8 * pixelSize;
             Vector2 localPos = new Vector2(localX, localY);
             plate.transform.localPosition = localPos;
+            absoluteY++;
         }
     }
 
