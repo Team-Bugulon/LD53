@@ -1,3 +1,4 @@
+using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -48,8 +49,27 @@ public class Camera_Manager : MonoBehaviour
         Vector2 offset = GameManager.i.player.rb.velocity.normalized * cameraDistancePx * pixelSize;
         Vector2 tempPos = (Vector2)GameManager.i.player.transform.position + offset;
         mainCamera.transform.position = new Vector3(
-            Mathf.RoundToInt(tempPos.x / pixelSize) * pixelSize, 
-            Mathf.RoundToInt(tempPos.y / pixelSize) * pixelSize, 
+            Mathf.RoundToInt(tempPos.x / pixelSize) * pixelSize,
+            Mathf.RoundToInt(tempPos.y / pixelSize) * pixelSize,
             mainCamera.transform.position.z);
+        //transform.position = new Vector3(
+        //        Mathf.RoundToInt(tempPos.x / pixelSize) * pixelSize,
+        //        Mathf.RoundToInt(tempPos.y / pixelSize) * pixelSize,
+        //        mainCamera.transform.position.z);
     }
+    
+    public void ShakeScreen(float duration = .35f, float strength = 5f, int vibrato = 20, DG.Tweening.Ease ease = Ease.OutExpo)
+    {
+        mainCamera.transform.DOComplete();
+        mainCamera.transform.DOShakeRotation(duration, strength, vibrato).SetEase(ease).OnComplete(() =>
+        {
+            //mainCamera.transform.parent.rotation = Quaternion.Euler(Vector3.zero);
+            mainCamera.transform.localRotation = Quaternion.Euler(Vector3.zero);
+            mainCamera.transform.localPosition = new Vector3(0, 0, -10);
+        });
+        //mainCamera.transform.DOShakePosition(duration, strength, vibrato).SetEase(ease).OnComplete(() => {
+        //    mainCamera.transform.position = new Vector3(0, 0, -10);
+        //});
+    }
+
 }

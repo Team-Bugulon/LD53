@@ -1,7 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Experimental.GlobalIllumination;
 using UnityEngine.InputSystem;
+using UnityEngine.SocialPlatforms;
 
 public class Player : MonoBehaviour
 {
@@ -10,6 +14,14 @@ public class Player : MonoBehaviour
     [SerializeField] float turnSpeed = 1f;
     [SerializeField] float brakeSpeed = 1f;
     [SerializeField] float accelerateSpeed = 1f;
+    [SerializeField] float collisionForce = 10;
+
+    [SerializeField] float stunTime = 1f;
+    [SerializeField] float freezeTime = 1f;
+    [SerializeField] float cooldownTime = 2f;
+    public bool stunned = false;
+    public bool canBeHurt = true;
+
     float direction = 0;
     float realSpeed;
     bool controlsLocked = false;
@@ -18,6 +30,7 @@ public class Player : MonoBehaviour
     Vector2 movementInput = Vector2.zero;
     CircleCollider2D cc;
     Animator ac;
+    SpriteRenderer sr;
     public Rigidbody2D rb;
     List<Plate> platesHeld;
     
@@ -69,6 +82,8 @@ public class Player : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         ac = GetComponent<Animator>();
         platesHeld = new List<Plate>();
+        sr = GetComponent<SpriteRenderer>();
+        sr.material = new Material(sr.material);
     }
 
     public void PickUpPlate(Plate plate)
@@ -146,6 +161,9 @@ public class Player : MonoBehaviour
                 platesHeld.Remove(plate);
                 plate.transform.parent = customer.assignedPlateContainer;
                 plate.Magnetize(customer.assignedPlateContainer.gameObject, Vector2.zero, .5f);
+
+                UpdatePlatesPos();
+
                 //return true
                 return true;
             }
@@ -153,34 +171,69 @@ public class Player : MonoBehaviour
         return false;
     }
 
+    void UpdatePlatesPos()
+    {
+        //get all plates in plateContainerL
+        List<Plate> plateL = plateContainerL.GetComponentsInChildren<Plate>().ToList();
+        //sort plates by local position y
+        int absoluteY = plateL.Count;
+        foreach (Plate plate in plateL)
+        {
+            absoluteY--;
+            float localX = (absoluteY % 2) * 4 * pixelSize;
+            float localY = absoluteY * 8 * pixelSize;
+            Vector2 localPos = new Vector2(localX, localY);
+            plate.transform.localPosition = localPos;
+        }
+
+        //get all plates in plateContainerL
+        List<Plate> plateR = plateContainerR.GetComponentsInChildren<Plate>().ToList();
+        //sort plates by local position y
+        absoluteY = plateR.Count;
+        foreach (Plate plate in plateR)
+        {
+            absoluteY--;
+            float localX = (absoluteY % 2) * 4 * pixelSize;
+            float localY = absoluteY * 8 * pixelSize;
+            Vector2 localPos = new Vector2(localX, localY);
+            plate.transform.localPosition = localPos;
+        }
+    }
+
 
     void FixedUpdate()
     {
-        if (movementInput != Vector2.zero && !isBraking)
+        if (!stunned)
         {
-            //get vector angle from movementInput
-            var newDirection = Vector2.SignedAngle(Vector2.right, movementInput);
+            if (movementInput != Vector2.zero && !isBraking)
+            {
+                //get vector angle from movementInput
+                var newDirection = Vector2.SignedAngle(Vector2.right, movementInput);
 
-            direction = Mathf.LerpAngle(direction, newDirection, turnSpeed);
+                direction = Mathf.LerpAngle(direction, newDirection, turnSpeed);
+            }
+
+            if (isBraking)
+            {
+                realSpeed = Mathf.Lerp(realSpeed, 0, brakeSpeed);
+            }
+            else
+            {
+                realSpeed = Mathf.Lerp(realSpeed, moveSpeed, accelerateSpeed);
+            }
+
+            if (realSpeed <= 3f)
+            {
+                atRest = true;
+            }
+            else
+            {
+                atRest = false;
+            }
+
+            rb.velocity = DegreeToVector2(direction) * realSpeed;
         }
 
-        if (isBraking)
-        {
-            realSpeed = Mathf.Lerp(realSpeed, 0, brakeSpeed);
-        } else
-        {
-            realSpeed = Mathf.Lerp(realSpeed, moveSpeed, accelerateSpeed);
-        }
-
-        if (realSpeed <= 3f)
-        {
-            atRest = true;
-        } else
-        {
-            atRest = false;
-        }
-
-        rb.velocity = DegreeToVector2(direction) * realSpeed;
     }
 
     private void Update()
@@ -190,10 +243,18 @@ public class Player : MonoBehaviour
 
     void Animate()
     {
-        if (isBraking)
+        if (stunned)
+        {
+            PlayAnimation("player_hurt");
+        }
+        else if (atRest)
+        {
+            PlayAnimation("player_idle");
+        }
+        else if (isBraking)
         {
             string suffix = "front";
-            if (rb.velocity.y > 1f)
+            if (rb.velocity.y > 0f)
             {
                 suffix = "back";
             }
@@ -229,6 +290,71 @@ public class Player : MonoBehaviour
         {
             ac.Play(animName);
         }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        //Vector2 direction = (((Vector2)collision.transform.position + collision.collider.offset) - ((Vector2)transform.position + cc.offset)).normalized;
+        Vector2 collisionDirection = DegreeToVector2(direction).normalized;
+
+
+        Hurt(collisionDirection);
+    }
+
+    public void Hurt(Vector2 collisionDirection)
+    {
+        if (canBeHurt)
+        {
+            canBeHurt = false;
+            realSpeed = 0;
+            stunned = true;
+            rb.velocity = Vector2.zero;
+
+            //rb.AddForce(-collisionDirection * collisionForce);
+            //GameManager.i.ShakeScreen();
+            //SoundManager.i.Play("Damage2", .1f, .8f);
+            StartCoroutine(StunTimer(-collisionDirection * collisionForce));
+            Camera_Manager.i.ShakeScreen(duration:.65f);
+            //StartCoroutine(CooldownTimer());
+        }
+    }
+
+    IEnumerator StunTimer(Vector2 force)
+    {
+        sr.material.SetColor("_TintAdd", Color.white);
+        yield return new WaitForSeconds(.05f);
+        sr.material.SetColor("_TintAdd", Color.black);
+        yield return new WaitForSeconds(freezeTime - .05f);
+        rb.AddForce(force);
+        yield return new WaitForSeconds(stunTime);
+        realSpeed = 0;
+        stunned = false;
+        StartCoroutine(CooldownTimer());
+    }
+
+    IEnumerator CooldownTimer()
+    {
+        float flickerSpeed = .1f;
+        int tickQty = Mathf.RoundToInt(cooldownTime / flickerSpeed);
+        int flip = 0;
+        for (int i = 0; i < tickQty; i++)
+        {
+            if (flip == 0)
+            {
+                sr.material.SetColor("_TintAdd", Color.white);
+            }
+            else
+            {
+                sr.material.SetColor("_TintAdd", Color.black);
+            }
+
+            flip = (flip + 1) % 2;
+
+            yield return new WaitForSeconds(flickerSpeed);
+        }
+        sr.material.SetColor("_TintAdd", Color.black);
+
+        canBeHurt = true;
     }
 
     void OnDrawGizmos()

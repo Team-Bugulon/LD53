@@ -12,7 +12,7 @@ public class Table : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player") && GameManager.i.player.atRest)
+        if (collision.CompareTag("Player") && GameManager.i.player.atRest && !GameManager.i.player.stunned)
         {
             if (leftCustomer != null)
             {
