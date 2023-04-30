@@ -32,21 +32,21 @@
 				"id": "chair",
 				"iid": "b6c50190-c640-11ed-9212-bd09219991d8",
 				"layer": "entities",
-				"x": 128,
-				"y": 192,
+				"x": 64,
+				"y": 128,
 				"width": 32,
 				"height": 32,
 				"color": 12470831,
 				"customFields": {
-					"wave": 1
+					"wave": 0
 				}
 			},
 			{
 				"id": "chair",
 				"iid": "b759a070-c640-11ed-9212-95da711f58f4",
 				"layer": "entities",
-				"x": 224,
-				"y": 160,
+				"x": 160,
+				"y": 96,
 				"width": 32,
 				"height": 32,
 				"color": 12470831,
@@ -60,8 +60,8 @@
 				"id": "table",
 				"iid": "c3ceddc0-c640-11ed-9212-d3cc927abf36",
 				"layer": "entities",
-				"x": 160,
-				"y": 160,
+				"x": 96,
+				"y": 96,
 				"width": 64,
 				"height": 64,
 				"color": 3123482,
