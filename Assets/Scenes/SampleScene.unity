@@ -803,7 +803,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85ac6dfc9e138604a9659a74bfa2bd69, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameraDistancePx: 8
+  cameraDistancePx: 0
   ortho: {x: 0, y: 0}
   orthoCropped: {x: 0, y: 0}
   margin: 24

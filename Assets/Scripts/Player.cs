@@ -25,6 +25,8 @@ public class Player : MonoBehaviour
     
     public bool inKitchen = false;
 
+    bool actionAfterPause = false;
+
     float direction = 0;
     float realSpeed;
     bool controlsLocked = false;
@@ -50,6 +52,7 @@ public class Player : MonoBehaviour
         if (ctx.performed && !controlsLocked)
         {
             movementInput = ctx.ReadValue<Vector2>();
+            actionAfterPause = true;
         }
         else if (ctx.canceled)
         {
@@ -224,7 +227,7 @@ public class Player : MonoBehaviour
                 direction = Mathf.LerpAngle(direction, newDirection, turnSpeed);
             }
 
-            if (isBraking)
+            if (isBraking || !actionAfterPause)
             {
                 realSpeed = Mathf.Lerp(realSpeed, 0, brakeSpeed);
             }
@@ -243,6 +246,8 @@ public class Player : MonoBehaviour
             if (realSpeed <= 3f)
             {
                 atRest = true;
+                //movementInput = Vector2.zero;
+                if (movementInput == Vector2.zero) actionAfterPause = false;
             }
             else
             {
