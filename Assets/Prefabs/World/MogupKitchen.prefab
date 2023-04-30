@@ -73,7 +73,7 @@ SpriteRenderer:
   m_SortingLayerID: -21593895
   m_SortingLayer: 1
   m_SortingOrder: -1
-  m_Sprite: {fileID: 2142930256, guid: edd62b9731fedf643a276ebd13783b6b, type: 3}
+  m_Sprite: {fileID: 1360001882, guid: 3476a4123686c4e4eaf5c9ee09ac382a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -94,9 +94,8 @@ GameObject:
   m_Component:
   - component: {fileID: 638835381381487237}
   - component: {fileID: 638835381381487238}
-  - component: {fileID: 2922249666767943071}
   m_Layer: 0
-  m_Name: Tile
+  m_Name: MogupKitchen
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -161,7 +160,7 @@ SpriteRenderer:
   m_SortingLayerID: -21593895
   m_SortingLayer: 1
   m_SortingOrder: 0
-  m_Sprite: {fileID: 256778947, guid: edd62b9731fedf643a276ebd13783b6b, type: 3}
+  m_Sprite: {fileID: -68187323, guid: ae97444a0c7b91f4390c0b7b2c4c057b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -172,19 +171,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &2922249666767943071
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 638835381381487239}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d9cd40c9da0f2404ab4ab832b3bde510, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  wallSpritesheetPath: Assets/Sprites/World/tiles/thy1.png
 --- !u!1 &638835383295256849
 GameObject:
   m_ObjectHideFlags: 0
@@ -258,7 +244,7 @@ SpriteRenderer:
   m_SortingLayerID: -21593895
   m_SortingLayer: 1
   m_SortingOrder: -3
-  m_Sprite: {fileID: -2060360096, guid: edd62b9731fedf643a276ebd13783b6b, type: 3}
+  m_Sprite: {fileID: 16501193, guid: 3476a4123686c4e4eaf5c9ee09ac382a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -342,7 +328,7 @@ SpriteRenderer:
   m_SortingLayerID: -21593895
   m_SortingLayer: 1
   m_SortingOrder: -2
-  m_Sprite: {fileID: -821104036, guid: edd62b9731fedf643a276ebd13783b6b, type: 3}
+  m_Sprite: {fileID: 1553398656, guid: 3476a4123686c4e4eaf5c9ee09ac382a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
