@@ -8,13 +8,15 @@ public class Chair : MonoBehaviour
     [SerializeField] Transform customerContainer;
     [SerializeField] Customer customerPrefab;
 
-    void Start()
+    public void Init()
     {
         if (wave != 0)
         {
             Customer customer = Instantiate(customerPrefab);
             customer.transform.parent = customerContainer;
             customer.transform.localPosition = Vector3.zero;
+            customer.wave = wave;
+            customer.Init();
         }
     }
 }

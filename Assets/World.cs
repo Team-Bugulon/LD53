@@ -164,6 +164,7 @@ public class World : MonoBehaviour
                 c.wave = ent.customFields.wave;
                 Vector2 offset = new Vector2(.5f, .5f);
                 c.transform.position = new Vector2(ent.x / 32f + offset.x, (level.height - ent.y) / 32f - offset.y);
+                c.Init();
             }
         }
 

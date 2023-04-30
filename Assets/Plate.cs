@@ -93,7 +93,7 @@ public class Plate : MonoBehaviour
             Break(true);
         }
         GetComponent<CircleCollider2D>().enabled = false;
-        transform.parent = transform.parent.parent.parent.parent;
+        transform.parent = transform.parent.parent.parent.parent.parent;
         transform.DOMoveY(-2 - offset, .4f).SetRelative(true).SetEase(Ease.InQuart);
         //Invoke("Break", .4f);
     }

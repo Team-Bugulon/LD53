@@ -29,8 +29,15 @@ public class Customer : MonoBehaviour
     int customerSkin = 0;
 
     // Start is called before the first frame update
-    void Start()
+    public void Init()
     {
+        if (!GameManager.i.customers.ContainsKey(wave))
+        {
+            GameManager.i.customers.Add(wave, new List<Customer>());
+        }
+        GameManager.i.customers[wave].Add(this);
+        GameManager.i.CustomerTotalQty++;
+
         customerSkin = Random.Range(0, GameManager.i.customersRat.Count);
         GetComponent<Animator>().runtimeAnimatorController = GameManager.i.customersRat[customerSkin];
         GetComponent<Animator>().Play("idle");
@@ -93,6 +100,7 @@ public class Customer : MonoBehaviour
                 transform.DOShakeScale(.4f, .5f, 20);
                 speech.gameObject.SetActive(false);
                 GetComponent<Animator>().Play("satisfied");
+                GameManager.i.CustomerSatisfied();
             }
         }
     }

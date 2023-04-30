@@ -47,8 +47,15 @@ public class GameManager : MonoBehaviour
     List<int> availableDish;
     Counter counter;
 
+    public Dictionary<int, List<Customer>> customers;
+    public int CustomerTotalQty = 0;
+    public int CustomerTotalSatisfied = 0;
+
     private void GenerateWorld()
     {
+        CustomerTotalQty = 0;
+        CustomerTotalSatisfied = 0;
+        customers = new Dictionary<int, List<Customer>>();
         world.Generate(level);
         player = GameObject.FindObjectOfType<Player>();
         counter = GameObject.FindObjectOfType<Counter>();
@@ -62,8 +69,6 @@ public class GameManager : MonoBehaviour
 
         var objects2 = UnityEditor.AssetDatabase.LoadAllAssetsAtPath("Assets/Sprites/Gameplay/sludge.png");
         sludgeSprites = objects2.Where(q => q is Sprite).Cast<Sprite>().ToList();
-
-        UpdateWave();
 
         availableDish = new List<int>();
         for (int i = 0; i < dishSprites.Count; i++)
@@ -82,6 +87,7 @@ public class GameManager : MonoBehaviour
         //availableDish.Sort((a, b) => 1 - 2 * Random.Range(0, 1));
 
         GenerateWorld();
+        UpdateWave();
     }
 
     public int GetRandomDish()
@@ -112,11 +118,21 @@ public class GameManager : MonoBehaviour
     void UpdateWave()
     {
         wave++;
-        Customer[] customers = GameObject.FindObjectsOfType<Customer>();
-        foreach (var customer in customers)
+        if (CustomerTotalQty == CustomerTotalSatisfied)
         {
-            customer.waveUpdate(wave);
+            Win();
+        } else
+        {
+            foreach (var customer in customers[wave])
+            {
+                customer.waveUpdate(wave);
+            }
         }
+    }
+
+    void Win()
+    {
+        Debug.Log("GAME WIN !");
     }
 
     public void SpawnPlate(int dishType)
@@ -130,5 +146,20 @@ public class GameManager : MonoBehaviour
     public void BreakPlate(int dishType)
     {
         SpawnPlate(dishType);
+    }
+
+    public void CustomerSatisfied()
+    {
+        GameManager.i.CustomerTotalSatisfied++;
+        bool everySatisfied = true;
+        foreach (var customer in customers[wave])
+        {
+            if (customer.state != CustomerState.Satisfied)
+            {
+                everySatisfied = false;
+                break;
+            }
+        }
+        if (everySatisfied) UpdateWave();
     }
 }
