@@ -320,6 +320,16 @@ public class Player : MonoBehaviour
         }
     }
 
+    private void OnCollisionStay2D(Collision2D collision)
+    {
+        if (!atRest && !inKitchen && !collision.gameObject.CompareTag("Counter"))
+        {
+            Vector2 collisionDirection = DegreeToVector2(direction).normalized;
+
+            Hurt(collisionDirection);
+        }
+    }
+
     public void Hurt(Vector2 collisionDirection)
     {
         if (canBeHurt)
