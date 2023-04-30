@@ -1,0 +1,72 @@
+{
+	"identifier": "level_0",
+	"uniqueIdentifer": "efcde800-c640-11ed-9212-b1b3dd68d5f8",
+	"x": -1,
+	"y": -1,
+	"width": 992,
+	"height": 1024,
+	"bgColor": "#000000",
+	"neighbourLevels": [],
+	"customFields": {
+		"skin": 0,
+		"name": "bobiwrold",
+		"time": 130
+	},
+	"layers": [],
+	"entities": {
+		"counter": [
+			{
+				"id": "counter",
+				"iid": "ace192b0-c640-11ed-9212-dd48edeac64e",
+				"layer": "entities",
+				"x": 96,
+				"y": 288,
+				"width": 192,
+				"height": 64,
+				"color": 3090658,
+				"customFields" : {}
+			}
+		],
+		"chair": [
+			{
+				"id": "chair",
+				"iid": "b6c50190-c640-11ed-9212-bd09219991d8",
+				"layer": "entities",
+				"x": 128,
+				"y": 192,
+				"width": 32,
+				"height": 32,
+				"color": 12470831,
+				"customFields": {
+					"wave": 1
+				}
+			},
+			{
+				"id": "chair",
+				"iid": "b759a070-c640-11ed-9212-95da711f58f4",
+				"layer": "entities",
+				"x": 224,
+				"y": 160,
+				"width": 32,
+				"height": 32,
+				"color": 12470831,
+				"customFields": {
+					"wave": 0
+				}
+			}
+		],
+		"table": [
+			{
+				"id": "table",
+				"iid": "c3ceddc0-c640-11ed-9212-d3cc927abf36",
+				"layer": "entities",
+				"x": 160,
+				"y": 160,
+				"width": 64,
+				"height": 64,
+				"color": 3123482,
+				"customFields" : {}
+			}
+		]
+	}
+}

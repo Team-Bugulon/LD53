@@ -1,0 +1,31 @@
+{
+	"identifier": "level_1",
+	"uniqueIdentifer": "4a623390-c640-11ed-b37a-014af9195e7c",
+	"x": -1,
+	"y": -1,
+	"width": 1376,
+	"height": 544,
+	"bgColor": "#000000",
+	"neighbourLevels": [],
+	"customFields": {
+		"skin": 0,
+		"name": null,
+		"time": 0
+	},
+	"layers": [],
+	"entities": {
+		"counter": [
+			{
+				"id": "counter",
+				"iid": "a56a03a0-c640-11ed-912c-d9d44c305daf",
+				"layer": "entities",
+				"x": 832,
+				"y": 224,
+				"width": 192,
+				"height": 64,
+				"color": 3090658,
+				"customFields" : {}
+			}
+		]
+	}
+}

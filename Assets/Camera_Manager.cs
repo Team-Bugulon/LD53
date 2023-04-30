@@ -46,16 +46,16 @@ public class Camera_Manager : MonoBehaviour
 
     private void LateUpdate()
     {
-        Vector2 offset = GameManager.i.player.rb.velocity.normalized * cameraDistancePx * pixelSize;
-        Vector2 tempPos = (Vector2)GameManager.i.player.transform.position + offset;
-        mainCamera.transform.position = new Vector3(
-            Mathf.RoundToInt(tempPos.x / pixelSize) * pixelSize,
-            Mathf.RoundToInt(tempPos.y / pixelSize) * pixelSize,
-            mainCamera.transform.position.z);
-        //transform.position = new Vector3(
-        //        Mathf.RoundToInt(tempPos.x / pixelSize) * pixelSize,
-        //        Mathf.RoundToInt(tempPos.y / pixelSize) * pixelSize,
-        //        mainCamera.transform.position.z);
+        if (GameManager.i.player != null)
+        {
+
+            Vector2 offset = GameManager.i.player.rb.velocity.normalized * cameraDistancePx * pixelSize;
+            Vector2 tempPos = (Vector2)GameManager.i.player.transform.position + offset;
+            mainCamera.transform.position = new Vector3(
+                Mathf.RoundToInt(tempPos.x / pixelSize) * pixelSize,
+                Mathf.RoundToInt(tempPos.y / pixelSize) * pixelSize,
+                mainCamera.transform.position.z);
+        }
     }
     
     public void ShakeScreen(float duration = .35f, float strength = 5f, int vibrato = 20, DG.Tweening.Ease ease = Ease.OutExpo)

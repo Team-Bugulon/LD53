@@ -27,8 +27,13 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    [InspectorButton("GenerateWorld")]
+    public bool generate;
+    public int level;
+    
     [Header("References")]
     public Player player;
+    public World world;
 
     [Header("Prefabs")]
     [SerializeField] Plate platePrefab;
@@ -41,6 +46,13 @@ public class GameManager : MonoBehaviour
     int wave = 0;
     List<int> availableDish;
     Counter counter;
+
+    private void GenerateWorld()
+    {
+        world.Generate(level);
+        player = GameObject.FindObjectOfType<Player>();
+        counter = GameObject.FindObjectOfType<Counter>();
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -69,7 +81,7 @@ public class GameManager : MonoBehaviour
         }
         //availableDish.Sort((a, b) => 1 - 2 * Random.Range(0, 1));
 
-        counter = GameObject.FindObjectOfType<Counter>();
+        GenerateWorld();
     }
 
     public int GetRandomDish()
@@ -95,12 +107,6 @@ public class GameManager : MonoBehaviour
         }
 
         return dishType;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     void UpdateWave()
