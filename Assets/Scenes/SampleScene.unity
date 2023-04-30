@@ -8717,7 +8717,7 @@ MonoBehaviour:
   accelerateSpeed: 0.05
   collisionForce: 1500
   stunTime: 0.75
-  freezeTime: 0.13
+  freezeTime: 0.15
   cooldownTime: 1.5
   stunned: 0
   canBeHurt: 1
