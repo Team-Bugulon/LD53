@@ -11,6 +11,7 @@ public class Player : MonoBehaviour
 {
     [Header("Gameplay")]
     [SerializeField] float moveSpeed = 1f;
+    [SerializeField] float kitchenSpeed = 1f;
     [SerializeField] float turnSpeed = 1f;
     [SerializeField] float brakeSpeed = 1f;
     [SerializeField] float accelerateSpeed = 1f;
@@ -21,6 +22,8 @@ public class Player : MonoBehaviour
     [SerializeField] float cooldownTime = 2f;
     public bool stunned = false;
     public bool canBeHurt = true;
+    
+    public bool inKitchen = false;
 
     float direction = 0;
     float realSpeed;
@@ -28,7 +31,8 @@ public class Player : MonoBehaviour
     bool isBraking = false;
     public bool atRest = false;
     Vector2 movementInput = Vector2.zero;
-    CircleCollider2D cc;
+    //CircleCollider2D cc;
+    BoxCollider2D cc;
     Animator ac;
     SpriteRenderer sr;
     public Rigidbody2D rb;
@@ -78,7 +82,9 @@ public class Player : MonoBehaviour
 
     private void Start()
     {
-        cc = GetComponent<CircleCollider2D>();
+        //cc = GetComponent<CircleCollider2D>();
+        cc = GetComponent<BoxCollider2D>();
+
         rb = GetComponent<Rigidbody2D>();
         ac = GetComponent<Animator>();
         platesHeld = new List<Plate>();
@@ -224,7 +230,14 @@ public class Player : MonoBehaviour
             }
             else
             {
-                realSpeed = Mathf.Lerp(realSpeed, moveSpeed, accelerateSpeed);
+                if (!inKitchen)
+                {
+                    realSpeed = Mathf.Lerp(realSpeed, moveSpeed, accelerateSpeed);
+                } else
+                {
+                    realSpeed = Mathf.Lerp(realSpeed, kitchenSpeed, accelerateSpeed);
+                }
+                
             }
 
             if (realSpeed <= 3f)
@@ -296,14 +309,15 @@ public class Player : MonoBehaviour
             ac.Play(animName);
         }
     }
-
+    
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        //Vector2 direction = (((Vector2)collision.transform.position + collision.collider.offset) - ((Vector2)transform.position + cc.offset)).normalized;
-        Vector2 collisionDirection = DegreeToVector2(direction).normalized;
+        if (!atRest && !inKitchen && !collision.gameObject.CompareTag("Counter"))
+        {
+            Vector2 collisionDirection = DegreeToVector2(direction).normalized;
 
-
-        Hurt(collisionDirection);
+            Hurt(collisionDirection);
+        }
     }
 
     public void Hurt(Vector2 collisionDirection)

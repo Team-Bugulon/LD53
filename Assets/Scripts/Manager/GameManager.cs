@@ -40,6 +40,7 @@ public class GameManager : MonoBehaviour
 
     int wave = 0;
     List<int> availableDish;
+    Counter counter;
 
     // Start is called before the first frame update
     void Start()
@@ -67,6 +68,8 @@ public class GameManager : MonoBehaviour
             availableDish[randomIndex] = temp;
         }
         //availableDish.Sort((a, b) => 1 - 2 * Random.Range(0, 1));
+
+        counter = GameObject.FindObjectOfType<Counter>();
     }
 
     public int GetRandomDish()
@@ -113,6 +116,8 @@ public class GameManager : MonoBehaviour
     public void SpawnPlate(int dishType)
     {
         var plate = Instantiate(platePrefab);
+        plate.transform.parent = counter.GetFreeSpot();
+        plate.transform.localPosition = Vector3.zero;
         plate.SetDish(dishType);
     }
 

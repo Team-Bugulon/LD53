@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7948583552144818426}
   - component: {fileID: 3736832861502085293}
   - component: {fileID: 5249653301057980204}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: PS
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4846,7 +4846,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5151868280255684287}
   - component: {fileID: 5151868280255684272}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Dish
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4932,7 +4932,7 @@ GameObject:
   - component: {fileID: 5151868280500828513}
   - component: {fileID: 5151868280500828515}
   - component: {fileID: 5151868280500828516}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Plate
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5040,4 +5040,4 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 2
+  m_Radius: 2.25
