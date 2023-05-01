@@ -62,6 +62,7 @@ public class GameManager : MonoBehaviour
         CustomerTotalQty = 0;
         CustomerTotalSatisfied = 0;
         customers = new Dictionary<int, List<Customer>>();
+        if (level < 0) level = SaveManager.i.level;
         world.Generate(level);
         player = GameObject.FindObjectOfType<Player>();
         counter = GameObject.FindObjectOfType<Counter>();
@@ -99,6 +100,7 @@ public class GameManager : MonoBehaviour
         GenerateWorld();
         UpdateWave();
         UIManager.i.UpdateCustomerBubble(0, CustomerTotalQty, false);
+        TransitionManager.i.TransiOut(1, player.transform.position.x, player.transform.position.y);
     }
 
     public int GetRandomDish()
@@ -155,16 +157,17 @@ public class GameManager : MonoBehaviour
         if (!win)
         {
             win = true;
-            if (timer >= world.time)
+            if (timer <= world.time)
             {
                 score = 3;
-            } else if (timer+10 >= world.time)
+            } else if (timer - 10 <= world.time)
             {
                 score = 2;
             } else
             {
                 score = 1;
             }
+            SaveManager.i.NewScore(level, timer);
             Debug.Log("GAME WIN !");
             StartCoroutine(WinCoroutine());
         }

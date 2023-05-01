@@ -98,12 +98,15 @@ public class CustomButton : MonoBehaviour
         {
             case 0:
                 Debug.Log("GO BACK MENU");
+                TransitionManager.i.MainMenu();
                 break;
             case 1:
                 Debug.Log("RESTART LEVEL");
+                TransitionManager.i.LoadLevel();
                 break;
             case 2:
                 Debug.Log("NEXT LEVEL");
+                TransitionManager.i.NextLevel();
                 break;
         }
     }
