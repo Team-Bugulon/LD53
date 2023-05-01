@@ -236,7 +236,7 @@ Camera:
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
-    y: 0.16666667
+    y: 0
     width: 1
     height: 1
   near clip plane: 0.3
@@ -560,18 +560,18 @@ Tilemap:
   m_TileMatrixArray:
   - m_RefCount: 0
     m_Data:
-      e00: 6.1668973e+32
+      e00: 4.2612038e+26
       e01: 0
-      e02: 3.3855553
-      e03: 3.3855553
+      e02: 3.4641762
+      e03: 3.4641762
       e10: 7.09e-43
       e11: 0
       e12: 7.05e-43
       e13: 7.05e-43
       e20: -0.00000033507013
-      e21: 9.29e-43
-      e22: -6.4616153e-29
-      e23: -3.7356303e+19
+      e21: 6.906e-42
+      e22: -1.6805135e-28
+      e23: -3.7119794e+19
       e30: 4.5904e-41
       e31: 0
       e32: 7.05e-43
@@ -580,22 +580,22 @@ Tilemap:
   - m_RefCount: 0
     m_Data: {r: 3.9724e-41, g: 3.9724e-41, b: 3.9724e-41, a: 3.9724e-41}
   m_TileObjectToInstantiateArray:
-  - m_RefCount: 930
-    m_Data: {fileID: 638835381381487239, guid: 5668924c150d30c4b9e9b08956e9eb59, type: 3}
-  - m_RefCount: 1697
-    m_Data: {fileID: 638835381381487239, guid: 52bf9a31941c2604783a87f06f2307e3, type: 3}
-  - m_RefCount: 270
-    m_Data: {fileID: 638835381381487239, guid: 8ceb70f96093af0459f2c35dd996017f, type: 3}
-  - m_RefCount: 28
-    m_Data: {fileID: 638835381381487239, guid: 40c13c4191d0b3847ba9ba24151860c8, type: 3}
-  - m_RefCount: 382
-    m_Data: {fileID: 638835381381487239, guid: 207207bdbac3d2348b359170d6c62103, type: 3}
-  - m_RefCount: 28
-    m_Data: {fileID: 638835381381487239, guid: 12b843d17103acd4f8e454c6714a9d66, type: 3}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
   m_AnimationFrameRate: 1
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Origin: {x: 0, y: 0, z: 0}
-  m_Size: {x: 40, y: 11, z: 1}
+  m_Size: {x: 28, y: 43, z: 1}
   m_TileAnchor: {x: 0.5, y: 0.5, z: 0}
   m_TileOrientation: 0
   m_TileOrientationMatrix:
@@ -722,7 +722,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   generate: 0
-  level: 0
+  level: 2
   player: {fileID: 0}
   world: {fileID: 1927430525}
   platePrefab: {fileID: 5151868280500828515, guid: 97eedf7814dac3540897858c3e1f55b4, type: 3}
@@ -731,6 +731,8 @@ MonoBehaviour:
   customersRat:
   - {fileID: 9100000, guid: 5f91458fb21ce4848b645854798f451d, type: 2}
   - {fileID: 9100000, guid: 0c8c7f3f252a8e94fbfee148f0021666, type: 2}
+  CustomerTotalQty: 0
+  CustomerTotalSatisfied: 0
 --- !u!114 &1927430525
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -743,16 +745,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b29cc73b584518643b99ed09e9cf0526, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelID: 1
+  levelID: 2
   skin: 0
-  time: 0
-  levelName: 
+  time: 30
+  levelName: Very Important Rats
   tilemap: {fileID: 1646227394}
   entitiesContainer: {fileID: 938077212}
   chair: {fileID: 3094912594521313633, guid: 1deb7727642a9074e962b6a8444fccee, type: 3}
   counter: {fileID: 5072298514349843437, guid: 4bf228a3eaec1214ab9d280f8a1f58db, type: 3}
   table: {fileID: 7491452395561302385, guid: db6e7beecf03ed64da27cfc1362508f4, type: 3}
   kitchenArea: {fileID: 7942257792156988633, guid: 40cbefdf2ff30b64d9ef2b624102ea49, type: 3}
+  door: {fileID: 4687033408197053524, guid: d8ac30d009c593a41aea54f0edaeb56d, type: 3}
   tiles:
   - {fileID: 11400000, guid: af4fe8d8cb09cbb4caf3178197bb6b76, type: 2}
   - {fileID: 11400000, guid: fefef0c6314b80b4bb81e29b70942a17, type: 2}

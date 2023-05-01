@@ -7,6 +7,8 @@ using Newtonsoft.Json;
 using System;
 
 public class CounterEntity : Entity { };
+
+public class DoorEntity : Entity { };
 public class ChairEntity : Entity { public CustomFieldsChair customFields; };
 public class CustomFieldsChair
 {
@@ -26,6 +28,7 @@ public class EntitiesContainer
     public List<CounterEntity> counter;
     public List<ChairEntity> chair;
     public List<TableEntity> table;
+    public List<DoorEntity> door;
 }
 
 public class CustomFields
@@ -72,6 +75,7 @@ public class World : MonoBehaviour
     public Counter counter;
     public Table table;
     public KitchenArea kitchenArea;
+    public Door door;
     public List<TileBase> tiles;
 
     public void Generate(int worldID)
@@ -165,6 +169,17 @@ public class World : MonoBehaviour
                 Vector2 offset = new Vector2(.5f, .5f);
                 c.transform.position = new Vector2(ent.x / 32f + offset.x, (level.height - ent.y) / 32f - offset.y);
                 c.Init();
+            }
+        }
+
+        if (level.entities.door != null)
+        {
+            foreach (var ent in level.entities.door)
+            {
+                Door c = Instantiate(door);
+                c.transform.parent = entitiesContainer;
+                Vector2 offset = new Vector2(1.5f, .875f);
+                c.transform.position = new Vector2(ent.x / 32f + offset.x, (level.height - ent.y) / 32f - offset.y);
             }
         }
 

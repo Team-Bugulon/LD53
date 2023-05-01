@@ -54,6 +54,30 @@
 					"wave": 1
 				}
 			}
+		],
+		"door": [
+			{
+				"id": "door",
+				"iid": "5344cc10-c640-11ed-b3a5-638641a920e8",
+				"layer": "entities",
+				"x": 384,
+				"y": 320,
+				"width": 96,
+				"height": 64,
+				"color": 16711932,
+				"customFields" : {}
+			},
+			{
+				"id": "door",
+				"iid": "54fe8a00-c640-11ed-b3a5-698e6dcb46ed",
+				"layer": "entities",
+				"x": 736,
+				"y": 320,
+				"width": 96,
+				"height": 64,
+				"color": 16711932,
+				"customFields" : {}
+			}
 		]
 	}
 }
