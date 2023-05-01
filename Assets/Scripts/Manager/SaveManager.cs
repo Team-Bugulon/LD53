@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SocialPlatforms.Impl;
 
 public class SaveManager : MonoBehaviour
 {
@@ -28,6 +29,7 @@ public class SaveManager : MonoBehaviour
         {
             _i = this;
             DontDestroyOnLoad(gameObject);
+            Load();
         }
         else
         {
@@ -39,11 +41,17 @@ public class SaveManager : MonoBehaviour
     public class Save_Data
     {
         //public int highscore;
+        public List<float> times;
+        float musicVolume;
+        float sfxVolume;
     }
+
+    public Save_Data data;
+    public int level = 0;
 
     public void Save()
     {
-        Save_Data data = new Save_Data();
+        //data = new Save_Data();
         //data.highscore = TransitionManager.i.BestLevel;
 
         string json = JsonUtility.ToJson(data);
@@ -55,12 +63,25 @@ public class SaveManager : MonoBehaviour
         if (PlayerPrefs.HasKey("save"))
         {
             string json = PlayerPrefs.GetString("save");
-            Save_Data data = JsonUtility.FromJson<Save_Data>(json);
+            data = JsonUtility.FromJson<Save_Data>(json);
             //TransitionManager.i.BestLevel = data.highscore;
+            if (data.times.Count < 20)
+            {
+                for (int i = data.times.Count; i < 20; i++)
+                {
+                    data.times.Add(0);
+                }
+            }
         }
         else
         {
             Debug.Log("No save data found");
+            data = new Save_Data();
+            data.times = new List<float>();
+            for (int i = 0; i < 20; i++)
+            {
+                data.times.Add(0);
+            }
         }
     }
 
@@ -69,4 +90,38 @@ public class SaveManager : MonoBehaviour
         PlayerPrefs.DeleteKey("save");
     }
 
+    public int GetScore(int levelID)
+    {
+        string jsonPath = "LDtk/Levels/simplified/level_" + levelID.ToString() + "/data";
+
+        LevelsJSON level = LevelsJSON.CreateFromJSON(jsonPath);
+
+        float time = level.customFields.time / 10f;
+
+        int score = 0;
+
+        if (data.times[levelID] <= time)
+        {
+            score = 3;
+        }
+        else if (data.times[levelID] - 10 <= time)
+        {
+            score = 2;
+        }
+        else
+        {
+            score = 1;
+        }
+
+        return score;
+    }
+
+    public void NewScore(int levelID, float time)
+    {
+        if (time < data.times[levelID])
+        {
+            data.times[levelID] = time;
+            Save();
+        }
+    }
 }

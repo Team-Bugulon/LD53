@@ -32,7 +32,7 @@ public class Player : MonoBehaviour
     bool actionAfterPause = false;
 
     float direction = 0;
-    float realSpeed;
+    public float realSpeed;
     bool controlsLocked = false;
     bool isBraking = false;
     public bool atRest = false;
@@ -336,7 +336,7 @@ public class Player : MonoBehaviour
     
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (!atRest && !inKitchen && !collision.gameObject.CompareTag("Counter"))
+        if (!atRest && realSpeed > 5.5f && !inKitchen && !collision.gameObject.CompareTag("Counter"))
         {
             Vector2 collisionDirection = DegreeToVector2(direction).normalized;
 
@@ -346,7 +346,7 @@ public class Player : MonoBehaviour
 
     private void OnCollisionStay2D(Collision2D collision)
     {
-        if (!atRest && !inKitchen && !collision.gameObject.CompareTag("Counter"))
+        if (!atRest && realSpeed > 5.5f && !inKitchen && !collision.gameObject.CompareTag("Counter"))
         {
             Vector2 collisionDirection = DegreeToVector2(direction).normalized;
 
@@ -358,6 +358,8 @@ public class Player : MonoBehaviour
     {
         if (canBeHurt)
         {
+            Debug.Log("Hurt! " + realSpeed);
+
             canBeHurt = false;
             realSpeed = 0;
             stunned = true;

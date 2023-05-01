@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
+using Unity.VisualScripting;
 
 public class TransitionManager : MonoBehaviour
 {
@@ -40,30 +41,33 @@ public class TransitionManager : MonoBehaviour
 
     public void TransiIn()
     {
-        SoundManager.i.MusicOut();
+        //SoundManager.i.MusicOut();
+        transi.gameObject.SetActive(true);
         transi.DOKill();
-        transi.position = new Vector2(40, Camera.main.transform.position.y);
-        transi.DOMoveX(0, 1.5f).SetEase(Ease.InOutCubic).SetUpdate(true);
+        transi.position = new Vector2(40 + Camera.main.transform.position.x, Camera.main.transform.position.y);
+        transi.DOMoveX(Camera.main.transform.position.x, 1.5f).SetEase(Ease.InOutCubic).SetUpdate(true);
     }
 
-    public void TransiOut(float wait = 0f)
+    public void TransiOut(float wait = 0f, float anchorX = 0, float anchorY = 0)
     {
         Time.timeScale = 1;
         transi.DOKill();
-        transi.position = new Vector2(0, Camera.main.transform.position.y);
+        transi.position = new Vector2(anchorX, anchorY);
         var sequence = DOTween.Sequence();
         sequence.AppendInterval(wait);
-        sequence.Append(transi.DOMove(Vector3.zero, 0f));
-        sequence.Append(transi.DOMoveX(-40, 1.5f).SetEase(Ease.InOutCirc).SetUpdate(true));
+        //sequence.Append(transi.DOMove(Vector3.zero, 0f));
+        sequence.Append(transi.DOMoveX(-40 + anchorX, 1.5f).SetEase(Ease.InOutCirc).SetUpdate(true)).OnComplete(() => transi.gameObject.SetActive(false));
     }
 
     public void NextLevel()
     {
+        SaveManager.i.level++;
+        LoadLevel();
     }
 
-
-    public void LoadLevel(int level = 0)
+    public void LoadLevel(int level = -1)
     {
+        if (level > -1) SaveManager.i.level = level;
         StartCoroutine(LoadLevelCoroutine());
     }
 
@@ -71,7 +75,8 @@ public class TransitionManager : MonoBehaviour
     {
         TransiIn();
         yield return new WaitForSecondsRealtime(2f);
-        UnityEngine.SceneManagement.SceneManager.LoadScene(1);
+        //UnityEngine.SceneManagement.SceneManager.LoadScene(2);
+        UnityEngine.SceneManagement.SceneManager.LoadScene(0);
     }
 
     public void MainMenu()
@@ -83,7 +88,7 @@ public class TransitionManager : MonoBehaviour
     {
         TransiIn();
         yield return new WaitForSecondsRealtime(2f);
-        UnityEngine.SceneManagement.SceneManager.LoadScene(0);
+        UnityEngine.SceneManagement.SceneManager.LoadScene(1);
         TransiOut(1f);
     }
 }
