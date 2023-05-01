@@ -12,7 +12,8 @@ public class WallAlts : MonoBehaviour
     {
         if (wallSpritesheetPath != null && wallSpritesheetPath != "")
         {
-            var objects = UnityEditor.AssetDatabase.LoadAllAssetsAtPath(wallSpritesheetPath);
+            var objects = Resources.LoadAll<Sprite>(wallSpritesheetPath);
+
             var wallAlts = objects.Where(q => q is Sprite).Cast<Sprite>().ToList();
             //order them by name
             wallAlts = wallAlts.OrderBy(q => q.name).ToList();
@@ -29,7 +30,7 @@ public class WallAlts : MonoBehaviour
 
         if (floorSpritesheetPath != null && floorSpritesheetPath != "")
         {
-            var objects = UnityEditor.AssetDatabase.LoadAllAssetsAtPath(floorSpritesheetPath);
+            var objects = Resources.LoadAll<Sprite>(floorSpritesheetPath);
             var floorAlts = objects.Where(q => q is Sprite).Cast<Sprite>().ToList();
             //order them by name
             floorAlts = floorAlts.OrderBy(q => q.name).ToList();

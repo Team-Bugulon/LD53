@@ -69,13 +69,13 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        var objects = UnityEditor.AssetDatabase.LoadAllAssetsAtPath("Assets/Sprites/Gameplay/Dish/dish.png");
+        var objects = Resources.LoadAll<Sprite>("Assets/dish");
         dishSprites = objects.Where(q => q is Sprite).Cast<Sprite>().ToList();
 
-        var objects2 = UnityEditor.AssetDatabase.LoadAllAssetsAtPath("Assets/Sprites/Gameplay/sludge.png");
+        var objects2 = Resources.LoadAll<Sprite>("Assets/sludge");
         sludgeSprites = objects2.Where(q => q is Sprite).Cast<Sprite>().ToList();
 
-        var objects3 = UnityEditor.AssetDatabase.LoadAllAssetsAtPath("Assets/Sprites/World/puddle/puddle.png");
+        var objects3 = Resources.LoadAll<Sprite>("Assets/puddle");
         puddleSprites = objects3.Where(q => q is Sprite).Cast<Sprite>().ToList();
 
         availableDish = new List<int>();
@@ -96,6 +96,7 @@ public class GameManager : MonoBehaviour
 
         GenerateWorld();
         UpdateWave();
+        UIManager.i.UpdateCustomerBubble(0, CustomerTotalQty, false);
     }
 
     public int GetRandomDish()
@@ -169,6 +170,9 @@ public class GameManager : MonoBehaviour
     public void CustomerSatisfied()
     {
         GameManager.i.CustomerTotalSatisfied++;
+
+        UIManager.i.UpdateCustomerBubble(CustomerTotalSatisfied, CustomerTotalQty);
+            
         bool everySatisfied = true;
         foreach (var customer in customers[wave])
         {

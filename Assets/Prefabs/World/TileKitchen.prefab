@@ -184,8 +184,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9cd40c9da0f2404ab4ab832b3bde510, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wallSpritesheetPath: Assets/Sprites/World/tiles/ll.png
-  floorSpritesheetPath: Assets/Sprites/World/tiles/kitchenfloor_alts.png
+  wallSpritesheetPath: Assets/WallAlts/ll
+  floorSpritesheetPath: Assets/WallAlts/kitchenfloor_alts
 --- !u!1 &638835383295256849
 GameObject:
   m_ObjectHideFlags: 0
