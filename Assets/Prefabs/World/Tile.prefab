@@ -185,6 +185,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wallSpritesheetPath: Assets/Sprites/World/tiles/thy1.png
+  floorSpritesheetPath: Assets/Sprites/World/tiles/floor_alts.png
 --- !u!1 &638835383295256849
 GameObject:
   m_ObjectHideFlags: 0

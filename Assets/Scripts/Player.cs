@@ -281,10 +281,10 @@ public class Player : MonoBehaviour
             {
                 suffix = "back";
             }
-            if (rb.velocity.x < 0)
+            if (rb.velocity.x < -.1f)
             {
                 transform.localScale = new Vector3(-1, 1, 1);
-            } else
+            } else if (rb.velocity.x > .1f)
             {
                 transform.localScale = Vector3.one;
             }
@@ -296,11 +296,11 @@ public class Player : MonoBehaviour
             {
                 suffix = "back";
             }
-            if (rb.velocity.x < 0)
+            if (rb.velocity.x < -.1f)
             {
                 transform.localScale = new Vector3(-1, 1, 1);
             }
-            else
+            else if (rb.velocity.x > .1f)
             {
                 transform.localScale = Vector3.one;
             }

@@ -21,6 +21,7 @@ public class Plate : MonoBehaviour
     [SerializeField] SpriteRenderer plateRenderer;
     [SerializeField] SpriteRenderer mealRenderer;
     [SerializeField] ParticleSystem ps;
+    [SerializeField] GameObject circle;
 
     GameObject magnetizeTarget;
     Vector2 magnetizeOffset;
@@ -51,6 +52,7 @@ public class Plate : MonoBehaviour
 
     public void Magnetize(GameObject target, Vector2 offset, float duration = .25f)
     {
+        circle.SetActive(false);
         magnetizeTarget = target;
         magnetizeOffset = offset;
         magnetizeDuration = duration;
@@ -65,6 +67,7 @@ public class Plate : MonoBehaviour
     
     void PlayerPickUpPlate()
     {
+        circle.SetActive(false);
         GetComponent<CircleCollider2D>().enabled = false;
         GameManager.i.player.PickUpPlate(this);
     }
