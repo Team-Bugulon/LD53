@@ -36,8 +36,8 @@ public class Player : MonoBehaviour
     //CircleCollider2D cc;
     BoxCollider2D cc;
     Animator ac;
-    SpriteRenderer sr;
-    public Rigidbody2D rb;
+    [SerializeField] SpriteRenderer sr;
+    [HideInInspector] public Rigidbody2D rb;
     List<Plate> platesHeld;
     
 
@@ -91,7 +91,7 @@ public class Player : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         ac = GetComponent<Animator>();
         platesHeld = new List<Plate>();
-        sr = GetComponent<SpriteRenderer>();
+        //sr = GetComponent<SpriteRenderer>();
         sr.material = new Material(sr.material);
     }
 
