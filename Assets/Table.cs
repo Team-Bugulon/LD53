@@ -20,7 +20,8 @@ public class Table : MonoBehaviour
             if (leftCustomer != null)
             {
                 leftCustomer.Deliver();
-                if (leftCustomer.state == CustomerState.Waiting || leftCustomer.state == CustomerState.Ordering)
+                //if (leftCustomer.state == CustomerState.Waiting || leftCustomer.state == CustomerState.Ordering)
+                if (leftCustomer.state == CustomerState.Ordering)
                 {
                     disableCircle = false;
                 }
@@ -29,7 +30,8 @@ public class Table : MonoBehaviour
             if (rightCustomer != null)
             {
                 rightCustomer.Deliver();
-                if (rightCustomer.state == CustomerState.Waiting || rightCustomer.state == CustomerState.Ordering)
+                //if (rightCustomer.state == CustomerState.Waiting || rightCustomer.state == CustomerState.Ordering)
+                if (rightCustomer.state == CustomerState.Ordering)
                 {
                     disableCircle = false;
                 }
@@ -45,5 +47,60 @@ public class Table : MonoBehaviour
     public void EnableCircle()
     {
         circle.SetActive(true);
+    }
+    
+    public void DisableCircle()
+    {
+        circle.SetActive(false);
+    }
+
+    public void OnPlayerPickupFood(int dishType)
+    {
+        bool enableCircle = false;
+        if (leftCustomer != null)
+        {
+            if (leftCustomer.state == CustomerState.Waiting && leftCustomer.dishType == dishType)
+            {
+                enableCircle = true;
+            }
+        }
+
+        if (rightCustomer != null)
+        {
+            if (rightCustomer.state == CustomerState.Waiting && rightCustomer.dishType == dishType)
+            {
+                enableCircle = true;
+            }
+        }
+
+        if (enableCircle)
+        {
+            EnableCircle();
+        }
+    }
+
+    public void OnPlayerDropFood()
+    {
+        bool disableCircle = true;
+        if (leftCustomer != null)
+        {
+            if (leftCustomer.state == CustomerState.Ordering)
+            {
+                disableCircle = false;
+            }
+        }
+
+        if (rightCustomer != null)
+        {
+            if (rightCustomer.state == CustomerState.Ordering)
+            {
+                disableCircle = false;
+            }
+        }
+
+        if (disableCircle)
+        {
+            DisableCircle();
+        }
     }
 }

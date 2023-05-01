@@ -123,6 +123,11 @@ public class Player : MonoBehaviour
         plate.transform.localPosition = localPos;
 
         platesHeld.Add(plate);
+
+        foreach(Table table in FindObjectsOfType<Table>())
+        {
+            table.OnPlayerPickupFood(plate.dishType);
+        }
     }
 
     public Vector2 GetPlateOffset(Plate plate)
@@ -357,6 +362,11 @@ public class Player : MonoBehaviour
             }
 
             platesHeld = new List<Plate>();
+
+            foreach (Table table in FindObjectsOfType<Table>())
+            {
+                table.OnPlayerDropFood();
+            }
         }
     }
 

@@ -23,7 +23,7 @@ public class Customer : MonoBehaviour
     [SerializeField] Speech speech;
     public int wave = 1;
     public CustomerState state = CustomerState.Idle;
-    int dishType;
+    public int dishType;
 
     CustomerType type = CustomerType.Rat;
     int customerSkin = 0;
