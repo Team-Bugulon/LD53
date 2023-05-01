@@ -27,7 +27,7 @@ public class Player : MonoBehaviour
     public bool stunned = false;
     public bool canBeHurt = true;
     
-    public bool inKitchen = false;
+    public bool inKitchen = true;
 
     bool actionAfterPause = false;
 

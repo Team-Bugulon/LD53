@@ -45,7 +45,8 @@ public class GameManager : MonoBehaviour
     public List<Color> puddleColors;
     public List<RuntimeAnimatorController> customersRat;
 
-
+    public float timer = 0;
+    public bool win = false;
     int wave = 0;
     List<int> availableDish;
     Counter counter;
@@ -62,6 +63,7 @@ public class GameManager : MonoBehaviour
         world.Generate(level);
         player = GameObject.FindObjectOfType<Player>();
         counter = GameObject.FindObjectOfType<Counter>();
+        timer = 0;
     }
 
     // Start is called before the first frame update
@@ -121,6 +123,15 @@ public class GameManager : MonoBehaviour
         return dishType;
     }
 
+    private void Update()
+    {
+        if (!player.inKitchen && !win)
+        {
+            timer += Time.deltaTime;
+            UIManager.i.UpdateTime(timer);
+        }
+    }
+
     void UpdateWave()
     {
         wave++;
@@ -138,6 +149,7 @@ public class GameManager : MonoBehaviour
 
     void Win()
     {
+        win = true;
         Debug.Log("GAME WIN !");
     }
 

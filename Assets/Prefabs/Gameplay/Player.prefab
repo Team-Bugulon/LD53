@@ -553,7 +553,7 @@ MonoBehaviour:
   collisionForce: 1500
   stunTime: 0.75
   freezeTime: 0.15
-  cooldownTime: 1.5
+  cooldownTime: 1
   stunned: 0
   canBeHurt: 1
   inKitchen: 0
