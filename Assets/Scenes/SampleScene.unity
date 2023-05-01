@@ -997,6 +997,7 @@ MonoBehaviour:
   kitchenArea: {fileID: 7942257792156988633, guid: 40cbefdf2ff30b64d9ef2b624102ea49, type: 3}
   door: {fileID: 4687033408197053524, guid: d8ac30d009c593a41aea54f0edaeb56d, type: 3}
   puddle: {fileID: 965557874100388980, guid: 6332741ed3c167645a17efa1f5744fbf, type: 3}
+  walker: {fileID: -8533966573359742270, guid: 2c67181aaa65c1d4bab81a24c782c165, type: 3}
   tiles:
   - {fileID: 11400000, guid: af4fe8d8cb09cbb4caf3178197bb6b76, type: 2}
   - {fileID: 11400000, guid: fefef0c6314b80b4bb81e29b70942a17, type: 2}

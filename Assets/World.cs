@@ -14,6 +14,19 @@ public class CustomFieldsChair
 {
     public int wave = 0;
 }
+
+public class WalkerEntity : Entity { public CustomFieldsWalker customFields; };
+public class CustomFieldsWalker
+{
+    public List<Point> path;
+}
+
+public class Point
+{
+    public int cx = 0;
+    public int cy = 0;
+}
+
 public class TableEntity : Entity { };
 
 public class PuddleEntity : Entity { };
@@ -33,6 +46,7 @@ public class EntitiesContainer
     public List<TableEntity> table;
     public List<DoorEntity> door;
     public List<PuddleEntity> puddle;
+    public List<WalkerEntity> walker;
 }
 
 public class CustomFields
@@ -81,6 +95,7 @@ public class World : MonoBehaviour
     public KitchenArea kitchenArea;
     public Door door;
     public Puddle puddle;
+    public Walker walker;
     public List<TileBase> tiles;
 
     public void Generate(int worldID)
@@ -196,6 +211,24 @@ public class World : MonoBehaviour
                 c.transform.parent = entitiesContainer;
                 Vector2 offset = new Vector2(1, 1);
                 c.transform.position = new Vector2(ent.x / 32f + offset.x, (level.height - ent.y) / 32f - offset.y);
+            }
+        }
+
+        if (level.entities.walker != null)
+        {
+            foreach (var ent in level.entities.walker)
+            {
+                Walker c = Instantiate(walker);
+                c.transform.parent = entitiesContainer;
+                Vector2 offset = new Vector2(1, 1);
+                c.transform.position = new Vector2(ent.x / 32f + offset.x, (level.height - ent.y) / 32f - offset.y);
+
+                c.path = new List<Vector2>();
+                c.path.Add(c.transform.position);
+                foreach (var p in ent.customFields.path)
+                {
+                    c.path.Add(new Vector2(p.cx + offset.x, (level.height / 32f - p.cy)  - offset.y));
+                }
             }
         }
 
