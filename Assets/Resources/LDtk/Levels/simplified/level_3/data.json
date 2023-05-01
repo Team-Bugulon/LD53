@@ -1,52 +1,26 @@
 {
 	"identifier": "level_3",
-	"uniqueIdentifer": "782faee0-c640-11ed-9bff-8db59e3ed76c",
+	"uniqueIdentifer": "816ef2b0-c640-11ed-9bff-f9b6f02fa621",
 	"x": -1,
 	"y": -1,
-	"width": 1344,
-	"height": 1248,
+	"width": 1312,
+	"height": 1952,
 	"bgColor": "#000000",
 	"neighbourLevels": [],
 	"customFields": {
 		"skin": 0,
-		"name": "Slippery When Wet",
-		"time": 250
+		"name": "Very Important Rat",
+		"time": 150
 	},
 	"layers": [],
 	"entities": {
 		"chair": [
 			{
 				"id": "chair",
-				"iid": "63b362d0-c640-11ed-979a-ab1330b1351d",
+				"iid": "d734b120-c640-11ed-9bff-d1829f0cee32",
 				"layer": "entities",
-				"x": 608,
-				"y": 512,
-				"width": 32,
-				"height": 32,
-				"color": 12470831,
-				"customFields": {
-					"wave": 2
-				}
-			},
-			{
-				"id": "chair",
-				"iid": "650fbe80-c640-11ed-979a-ad63f8f0814a",
-				"layer": "entities",
-				"x": 704,
-				"y": 544,
-				"width": 32,
-				"height": 32,
-				"color": 12470831,
-				"customFields": {
-					"wave": 2
-				}
-			},
-			{
-				"id": "chair",
-				"iid": "a25e2bf0-c640-11ed-979a-83f7e77dab87",
-				"layer": "entities",
-				"x": 288,
-				"y": 736,
+				"x": 576,
+				"y": 320,
 				"width": 32,
 				"height": 32,
 				"color": 12470831,
@@ -56,84 +30,25 @@
 			},
 			{
 				"id": "chair",
-				"iid": "a354e800-c640-11ed-979a-4ba9bec5086d",
+				"iid": "d8383e70-c640-11ed-9bff-91a796e8e967",
 				"layer": "entities",
-				"x": 1024,
-				"y": 736,
+				"x": 672,
+				"y": 288,
 				"width": 32,
 				"height": 32,
 				"color": 12470831,
 				"customFields": {
-					"wave": 1
-				}
-			},
-			{
-				"id": "chair",
-				"iid": "a4a9a290-c640-11ed-979a-eb68fae3b82c",
-				"layer": "entities",
-				"x": 704,
-				"y": 896,
-				"width": 32,
-				"height": 32,
-				"color": 12470831,
-				"customFields": {
-					"wave": 2
-				}
-			},
-			{
-				"id": "chair",
-				"iid": "a5053010-c640-11ed-979a-418c44ebd0df",
-				"layer": "entities",
-				"x": 608,
-				"y": 928,
-				"width": 32,
-				"height": 32,
-				"color": 12470831,
-				"customFields": {
-					"wave": 2
+					"wave": 0
 				}
 			}
 		],
 		"table": [
 			{
 				"id": "table",
-				"iid": "665de960-c640-11ed-979a-735c373af4d3",
+				"iid": "d98a60f0-c640-11ed-9bff-f72fb4aa884e",
 				"layer": "entities",
-				"x": 640,
-				"y": 512,
-				"width": 64,
-				"height": 64,
-				"color": 3123482,
-				"customFields" : {}
-			},
-			{
-				"id": "table",
-				"iid": "815d8860-c640-11ed-979a-397ecb792854",
-				"layer": "entities",
-				"x": 640,
-				"y": 896,
-				"width": 64,
-				"height": 64,
-				"color": 3123482,
-				"customFields" : {}
-			},
-			{
-				"id": "table",
-				"iid": "8434c440-c640-11ed-979a-8bddd0d83437",
-				"layer": "entities",
-				"x": 320,
-				"y": 704,
-				"width": 64,
-				"height": 64,
-				"color": 3123482,
-				"customFields" : {}
-			},
-			{
-				"id": "table",
-				"iid": "8608c0f0-c640-11ed-979a-590152582252",
-				"layer": "entities",
-				"x": 960,
-				"y": 704,
+				"x": 608,
+				"y": 288,
 				"width": 64,
 				"height": 64,
 				"color": 3123482,
@@ -143,10 +58,10 @@
 		"counter": [
 			{
 				"id": "counter",
-				"iid": "b426a1a0-c640-11ed-979a-7bb44daf2556",
+				"iid": "3acccbe0-c640-11ed-9bff-cf5dea7447ba",
 				"layer": "entities",
-				"x": 576,
-				"y": 192,
+				"x": 512,
+				"y": 1600,
 				"width": 192,
 				"height": 64,
 				"color": 3090658,
@@ -156,10 +71,10 @@
 		"door": [
 			{
 				"id": "door",
-				"iid": "e7500350-c640-11ed-979a-9d43de4d10ff",
+				"iid": "71e011f0-c640-11ed-9bff-c7362c9cd11f",
 				"layer": "entities",
-				"x": 352,
-				"y": 384,
+				"x": 384,
+				"y": 1536,
 				"width": 96,
 				"height": 64,
 				"color": 16711932,
@@ -167,10 +82,10 @@
 			},
 			{
 				"id": "door",
-				"iid": "e7d93080-c640-11ed-979a-df3562b4a858",
+				"iid": "728070a0-c640-11ed-9bff-4ffa36e036bf",
 				"layer": "entities",
-				"x": 896,
-				"y": 384,
+				"x": 832,
+				"y": 1536,
 				"width": 96,
 				"height": 64,
 				"color": 16711932,
@@ -180,10 +95,10 @@
 		"puddle": [
 			{
 				"id": "puddle",
-				"iid": "23b1b210-c640-11ed-b3dc-ff4cf57d879f",
+				"iid": "74bdae70-c640-11ed-b3dc-cb8ddc35c0df",
 				"layer": "entities",
-				"x": 608,
-				"y": 672,
+				"x": 832,
+				"y": 576,
 				"width": 64,
 				"height": 64,
 				"color": 58317,
@@ -191,10 +106,21 @@
 			},
 			{
 				"id": "puddle",
-				"iid": "bf050820-c640-11ed-b3dc-97e07a5797e1",
+				"iid": "7602b190-c640-11ed-b3dc-a97f0f3f6a69",
+				"layer": "entities",
+				"x": 416,
+				"y": 736,
+				"width": 64,
+				"height": 64,
+				"color": 58317,
+				"customFields" : {}
+			},
+			{
+				"id": "puddle",
+				"iid": "6b3ec230-c640-11ed-8015-1f0859555477",
 				"layer": "entities",
 				"x": 672,
-				"y": 704,
+				"y": 1184,
 				"width": 64,
 				"height": 64,
 				"color": 58317,

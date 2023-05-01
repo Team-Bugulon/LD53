@@ -1,17 +1,96 @@
 {
 	"identifier": "level_0",
-	"uniqueIdentifer": "6c8d7900-c640-11ed-9bff-c516d1977834",
+	"uniqueIdentifer": "74040692-c640-11ed-9bff-3fa1add1dff0",
 	"x": -1,
 	"y": -1,
-	"width": 672,
-	"height": 1536,
+	"width": 1376,
+	"height": 1056,
 	"bgColor": "#000000",
 	"neighbourLevels": [],
 	"customFields": {
 		"skin": 0,
-		"name": null,
-		"time": 0
+		"name": "New Girl",
+		"time": 600
 	},
 	"layers": [],
-	"entities" : {}
+	"entities": {
+		"counter": [
+			{
+				"id": "counter",
+				"iid": "003fb9a0-c640-11ed-9bff-234e31864cd8",
+				"layer": "entities",
+				"x": 512,
+				"y": 160,
+				"width": 192,
+				"height": 64,
+				"color": 3090658,
+				"customFields" : {}
+			}
+		],
+		"table": [
+			{
+				"id": "table",
+				"iid": "faf3b7c0-c640-11ed-9bff-c5382cfb2d65",
+				"layer": "entities",
+				"x": 320,
+				"y": 544,
+				"width": 64,
+				"height": 64,
+				"color": 3123482,
+				"customFields" : {}
+			},
+			{
+				"id": "table",
+				"iid": "fe63b130-c640-11ed-9bff-e9622cf2fc3d",
+				"layer": "entities",
+				"x": 992,
+				"y": 544,
+				"width": 64,
+				"height": 64,
+				"color": 3123482,
+				"customFields" : {}
+			}
+		],
+		"chair": [
+			{
+				"id": "chair",
+				"iid": "fbd0f860-c640-11ed-9bff-453cf341f69a",
+				"layer": "entities",
+				"x": 288,
+				"y": 576,
+				"width": 32,
+				"height": 32,
+				"color": 12470831,
+				"customFields": {
+					"wave": 2
+				}
+			},
+			{
+				"id": "chair",
+				"iid": "fc250bd0-c640-11ed-9bff-edf3be0356db",
+				"layer": "entities",
+				"x": 384,
+				"y": 544,
+				"width": 32,
+				"height": 32,
+				"color": 12470831,
+				"customFields": {
+					"wave": 2
+				}
+			},
+			{
+				"id": "chair",
+				"iid": "fd07a3a0-c640-11ed-9bff-d5b1d3da2e5b",
+				"layer": "entities",
+				"x": 1056,
+				"y": 576,
+				"width": 32,
+				"height": 32,
+				"color": 12470831,
+				"customFields": {
+					"wave": 1
+				}
+			}
+		]
+	}
 }
