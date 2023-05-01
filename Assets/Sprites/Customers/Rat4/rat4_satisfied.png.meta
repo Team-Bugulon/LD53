@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 3036e400d5ca93442aee3f54bd0f3f97
+guid: 96ee47b3b8ef1a54e8c57539023690ca
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -128,85 +128,106 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: rat2_idle_0
+      name: rat4_satisfied_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 64
         height: 64
-      alignment: 9
-      pivot: {x: 0.5, y: 0.53125}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1c0bca84e0ef1d942b23a58a2a7b6673
-      internalID: -1556462989
+      spriteID: 7627f8e4a5ef3fc45b0c409789a13d18
+      internalID: -1139033632
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: rat2_idle_1
+      name: rat4_satisfied_1
       rect:
         serializedVersion: 2
         x: 64
         y: 0
         width: 64
         height: 64
-      alignment: 9
-      pivot: {x: 0.5, y: 0.53125}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1d3f1854fc0ad624e918169b42b18f8b
-      internalID: -1648506240
+      spriteID: 1ebee84e7672d3544b84bac7b7abde88
+      internalID: -2144381371
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: rat2_idle_2
+      name: rat4_satisfied_2
       rect:
         serializedVersion: 2
         x: 128
         y: 0
         width: 64
         height: 64
-      alignment: 9
-      pivot: {x: 0.5, y: 0.53125}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c38d3c3b8fc88724f976b20d828030dc
-      internalID: -1880476393
+      spriteID: a8b9f294f0b031e449e341c3d46a7248
+      internalID: -1366425772
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: rat2_idle_3
+      name: rat4_satisfied_3
       rect:
         serializedVersion: 2
         x: 192
         y: 0
         width: 64
         height: 64
-      alignment: 9
-      pivot: {x: 0.5, y: 0.53125}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b68dd1e6979e8f94d9cb80ccf2f02573
-      internalID: 1044102024
+      spriteID: 12c4b087f289bea438f897c70dd95d8b
+      internalID: -1043724395
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rat4_satisfied_4
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 77107df009f67a346964f6f69dd06993
+      internalID: -1199138836
       vertices: []
       indices: 
       edges: []
@@ -222,10 +243,11 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      rat2_idle_0: -1556462989
-      rat2_idle_3: 1044102024
-      rat2_idle_1: -1648506240
-      rat2_idle_2: -1880476393
+      rat4_satisfied_1: -2144381371
+      rat4_satisfied_3: -1043724395
+      rat4_satisfied_0: -1139033632
+      rat4_satisfied_2: -1366425772
+      rat4_satisfied_4: -1199138836
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

@@ -731,6 +731,8 @@ MonoBehaviour:
   customersRat:
   - {fileID: 9100000, guid: 5f91458fb21ce4848b645854798f451d, type: 2}
   - {fileID: 9100000, guid: 0c8c7f3f252a8e94fbfee148f0021666, type: 2}
+  - {fileID: 9100000, guid: 419af471874f93e41b3d01692cf7e5da, type: 2}
+  - {fileID: 9100000, guid: c1b6d5085dd086a4fa35e0f26b7263c4, type: 2}
   CustomerTotalQty: 0
   CustomerTotalSatisfied: 0
 --- !u!114 &1927430525

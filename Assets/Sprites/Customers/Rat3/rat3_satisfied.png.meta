@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 3036e400d5ca93442aee3f54bd0f3f97
+guid: b3fc354bcd959094a889d7b859ed5b14
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -128,85 +128,190 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: rat2_idle_0
+      name: rat3_satisfied_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 64
         height: 64
-      alignment: 9
-      pivot: {x: 0.5, y: 0.53125}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1c0bca84e0ef1d942b23a58a2a7b6673
-      internalID: -1556462989
+      spriteID: 65e8b8e1e22a2e84e9f5db3940dda174
+      internalID: -412496558
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: rat2_idle_1
+      name: rat3_satisfied_1
       rect:
         serializedVersion: 2
         x: 64
         y: 0
         width: 64
         height: 64
-      alignment: 9
-      pivot: {x: 0.5, y: 0.53125}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1d3f1854fc0ad624e918169b42b18f8b
-      internalID: -1648506240
+      spriteID: d7607f686c264fe41938db18cb82488d
+      internalID: 1549013798
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: rat2_idle_2
+      name: rat3_satisfied_2
       rect:
         serializedVersion: 2
         x: 128
         y: 0
         width: 64
         height: 64
-      alignment: 9
-      pivot: {x: 0.5, y: 0.53125}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c38d3c3b8fc88724f976b20d828030dc
-      internalID: -1880476393
+      spriteID: b9e33a7004f99e1429bce466da4c802f
+      internalID: -1513710944
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: rat2_idle_3
+      name: rat3_satisfied_3
       rect:
         serializedVersion: 2
         x: 192
         y: 0
         width: 64
         height: 64
-      alignment: 9
-      pivot: {x: 0.5, y: 0.53125}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b68dd1e6979e8f94d9cb80ccf2f02573
-      internalID: 1044102024
+      spriteID: f2ec8eca9171b7642a0f52351c9ef193
+      internalID: -1350530799
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rat3_satisfied_4
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5f3e0c5aa5e9a3d439a21711249c38be
+      internalID: -2142912562
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rat3_satisfied_5
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bcf58f0895f7d404a91a309a22a95a41
+      internalID: 1513383702
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rat3_satisfied_6
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 26a5478767b74a844b94e5b2bd8ba5cf
+      internalID: -90210733
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rat3_satisfied_7
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b49112ac4359bc42b703893eb5a2aaf
+      internalID: -1511058048
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rat3_satisfied_8
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1495e79cce92cee4aa63e1bc6c9490ff
+      internalID: 25271197
       vertices: []
       indices: 
       edges: []
@@ -222,10 +327,15 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      rat2_idle_0: -1556462989
-      rat2_idle_3: 1044102024
-      rat2_idle_1: -1648506240
-      rat2_idle_2: -1880476393
+      rat3_satisfied_8: 25271197
+      rat3_satisfied_7: -1511058048
+      rat3_satisfied_1: 1549013798
+      rat3_satisfied_4: -2142912562
+      rat3_satisfied_5: 1513383702
+      rat3_satisfied_6: -90210733
+      rat3_satisfied_2: -1513710944
+      rat3_satisfied_3: -1350530799
+      rat3_satisfied_0: -412496558
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

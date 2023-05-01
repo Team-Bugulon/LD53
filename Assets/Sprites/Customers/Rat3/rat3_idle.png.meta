@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 3036e400d5ca93442aee3f54bd0f3f97
+guid: 2b896f9ba08874f40b51583ff10c6ec3
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -128,85 +128,85 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: rat2_idle_0
+      name: rat3_idle_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 64
         height: 64
-      alignment: 9
-      pivot: {x: 0.5, y: 0.53125}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1c0bca84e0ef1d942b23a58a2a7b6673
-      internalID: -1556462989
+      spriteID: a2189d3412a17a64a8ae37a1b765e1b6
+      internalID: -1732761166
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: rat2_idle_1
+      name: rat3_idle_1
       rect:
         serializedVersion: 2
         x: 64
         y: 0
         width: 64
         height: 64
-      alignment: 9
-      pivot: {x: 0.5, y: 0.53125}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1d3f1854fc0ad624e918169b42b18f8b
-      internalID: -1648506240
+      spriteID: e175f1e485f2bb8499b3e84bb7419216
+      internalID: -1966459224
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: rat2_idle_2
+      name: rat3_idle_2
       rect:
         serializedVersion: 2
         x: 128
         y: 0
         width: 64
         height: 64
-      alignment: 9
-      pivot: {x: 0.5, y: 0.53125}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c38d3c3b8fc88724f976b20d828030dc
-      internalID: -1880476393
+      spriteID: 376c09bf178fa474098cc80b27840f85
+      internalID: -1625121516
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: rat2_idle_3
+      name: rat3_idle_3
       rect:
         serializedVersion: 2
         x: 192
         y: 0
         width: 64
         height: 64
-      alignment: 9
-      pivot: {x: 0.5, y: 0.53125}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b68dd1e6979e8f94d9cb80ccf2f02573
-      internalID: 1044102024
+      spriteID: 2d642bb9d84e80a4dbb8083cf707a2d0
+      internalID: -2045657231
       vertices: []
       indices: 
       edges: []
@@ -222,10 +222,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      rat2_idle_0: -1556462989
-      rat2_idle_3: 1044102024
-      rat2_idle_1: -1648506240
-      rat2_idle_2: -1880476393
+      rat3_idle_0: -1732761166
+      rat3_idle_1: -1966459224
+      rat3_idle_3: -2045657231
+      rat3_idle_2: -1625121516
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
