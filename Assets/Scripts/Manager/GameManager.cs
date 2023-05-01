@@ -96,6 +96,7 @@ public class GameManager : MonoBehaviour
 
         GenerateWorld();
         UpdateWave();
+        UIManager.i.UpdateCustomerBubble(0, CustomerTotalQty, false);
     }
 
     public int GetRandomDish()
@@ -169,6 +170,9 @@ public class GameManager : MonoBehaviour
     public void CustomerSatisfied()
     {
         GameManager.i.CustomerTotalSatisfied++;
+
+        UIManager.i.UpdateCustomerBubble(CustomerTotalSatisfied, CustomerTotalQty);
+            
         bool everySatisfied = true;
         foreach (var customer in customers[wave])
         {
