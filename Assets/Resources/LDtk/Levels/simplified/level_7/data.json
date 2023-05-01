@@ -1,0 +1,157 @@
+{
+	"identifier": "level_7",
+	"uniqueIdentifer": "c516e920-c640-11ed-9bff-632eb34b81f6",
+	"x": -1,
+	"y": -1,
+	"width": 1632,
+	"height": 1856,
+	"bgColor": "#000000",
+	"neighbourLevels": [],
+	"customFields": {
+		"skin": 0,
+		"name": "Turbo Tunnel",
+		"time": 700
+	},
+	"layers": [],
+	"entities": {
+		"door": [
+			{
+				"id": "door",
+				"iid": "9b05e8b0-c640-11ed-9bff-656dc516e7b7",
+				"layer": "entities",
+				"x": 544,
+				"y": 1376,
+				"width": 96,
+				"height": 64,
+				"color": 16711932,
+				"customFields" : {}
+			},
+			{
+				"id": "door",
+				"iid": "9c97ac40-c640-11ed-9bff-1b57fd7abe14",
+				"layer": "entities",
+				"x": 544,
+				"y": 1056,
+				"width": 96,
+				"height": 64,
+				"color": 16711932,
+				"customFields" : {}
+			}
+		],
+		"table": [
+			{
+				"id": "table",
+				"iid": "34555110-c640-11ed-9bff-4309bd9282f0",
+				"layer": "entities",
+				"x": 992,
+				"y": 1344,
+				"width": 64,
+				"height": 64,
+				"color": 3123482,
+				"customFields" : {}
+			},
+			{
+				"id": "table",
+				"iid": "1607f130-c640-11ed-9bff-eb952565d257",
+				"layer": "entities",
+				"x": 352,
+				"y": 736,
+				"width": 64,
+				"height": 64,
+				"color": 3123482,
+				"customFields" : {}
+			},
+			{
+				"id": "table",
+				"iid": "183ef570-c640-11ed-9bff-57640f1ad7ec",
+				"layer": "entities",
+				"x": 1120,
+				"y": 864,
+				"width": 64,
+				"height": 64,
+				"color": 3123482,
+				"customFields" : {}
+			}
+		],
+		"chair": [
+			{
+				"id": "chair",
+				"iid": "3779c290-c640-11ed-9bff-9b7a0912316c",
+				"layer": "entities",
+				"x": 960,
+				"y": 1376,
+				"width": 32,
+				"height": 32,
+				"color": 12470831,
+				"customFields": {
+					"wave": 1
+				}
+			},
+			{
+				"id": "chair",
+				"iid": "14a66560-c640-11ed-9bff-43138d0884a6",
+				"layer": "entities",
+				"x": 416,
+				"y": 736,
+				"width": 32,
+				"height": 32,
+				"color": 12470831,
+				"customFields": {
+					"wave": 2
+				}
+			},
+			{
+				"id": "chair",
+				"iid": "151ddf50-c640-11ed-9bff-6f6c14d7e2a4",
+				"layer": "entities",
+				"x": 320,
+				"y": 768,
+				"width": 32,
+				"height": 32,
+				"color": 12470831,
+				"customFields": {
+					"wave": 1
+				}
+			},
+			{
+				"id": "chair",
+				"iid": "1ab329c0-c640-11ed-9bff-198191911f27",
+				"layer": "entities",
+				"x": 1088,
+				"y": 864,
+				"width": 32,
+				"height": 32,
+				"color": 12470831,
+				"customFields": {
+					"wave": 2
+				}
+			},
+			{
+				"id": "chair",
+				"iid": "1b1df980-c640-11ed-9bff-350cc4fa9e98",
+				"layer": "entities",
+				"x": 1184,
+				"y": 896,
+				"width": 32,
+				"height": 32,
+				"color": 12470831,
+				"customFields": {
+					"wave": 2
+				}
+			}
+		],
+		"counter": [
+			{
+				"id": "counter",
+				"iid": "5f3a6300-c640-11ed-9bff-cb4b01de1a4b",
+				"layer": "entities",
+				"x": 256,
+				"y": 1184,
+				"width": 192,
+				"height": 64,
+				"color": 3090658,
+				"customFields" : {}
+			}
+		]
+	}
+}

@@ -1,0 +1,96 @@
+{
+	"identifier": "level_4",
+	"uniqueIdentifer": "816ef2b0-c640-11ed-9bff-f9b6f02fa621",
+	"x": -1,
+	"y": -1,
+	"width": 1568,
+	"height": 2080,
+	"bgColor": "#000000",
+	"neighbourLevels": [],
+	"customFields": {
+		"skin": 0,
+		"name": "Very Important Rats",
+		"time": 450
+	},
+	"layers": [],
+	"entities": {
+		"chair": [
+			{
+				"id": "chair",
+				"iid": "d734b120-c640-11ed-9bff-d1829f0cee32",
+				"layer": "entities",
+				"x": 640,
+				"y": 320,
+				"width": 32,
+				"height": 32,
+				"color": 12470831,
+				"customFields": {
+					"wave": 1
+				}
+			},
+			{
+				"id": "chair",
+				"iid": "d8383e70-c640-11ed-9bff-91a796e8e967",
+				"layer": "entities",
+				"x": 736,
+				"y": 288,
+				"width": 32,
+				"height": 32,
+				"color": 12470831,
+				"customFields": {
+					"wave": 2
+				}
+			}
+		],
+		"table": [
+			{
+				"id": "table",
+				"iid": "d98a60f0-c640-11ed-9bff-f72fb4aa884e",
+				"layer": "entities",
+				"x": 672,
+				"y": 288,
+				"width": 64,
+				"height": 64,
+				"color": 3123482,
+				"customFields" : {}
+			}
+		],
+		"counter": [
+			{
+				"id": "counter",
+				"iid": "3acccbe0-c640-11ed-9bff-cf5dea7447ba",
+				"layer": "entities",
+				"x": 640,
+				"y": 1600,
+				"width": 192,
+				"height": 64,
+				"color": 3090658,
+				"customFields" : {}
+			}
+		],
+		"door": [
+			{
+				"id": "door",
+				"iid": "71e011f0-c640-11ed-9bff-c7362c9cd11f",
+				"layer": "entities",
+				"x": 512,
+				"y": 1536,
+				"width": 96,
+				"height": 64,
+				"color": 16711932,
+				"customFields" : {}
+			},
+			{
+				"id": "door",
+				"iid": "728070a0-c640-11ed-9bff-4ffa36e036bf",
+				"layer": "entities",
+				"x": 960,
+				"y": 1536,
+				"width": 96,
+				"height": 64,
+				"color": 16711932,
+				"customFields" : {}
+			}
+		]
+	}
+}

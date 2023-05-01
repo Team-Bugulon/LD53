@@ -1,0 +1,17 @@
+{
+	"identifier": "level_6",
+	"uniqueIdentifer": "7b939a60-c640-11ed-9bff-e5ce43edd8f2",
+	"x": -1,
+	"y": -1,
+	"width": 1120,
+	"height": 1696,
+	"bgColor": "#000000",
+	"neighbourLevels": [],
+	"customFields": {
+		"skin": 0,
+		"name": null,
+		"time": 0
+	},
+	"layers": [],
+	"entities" : {}
+}

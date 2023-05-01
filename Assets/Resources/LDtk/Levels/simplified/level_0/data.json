@@ -1,157 +1,17 @@
 {
 	"identifier": "level_0",
-	"uniqueIdentifer": "efcde800-c640-11ed-9212-b1b3dd68d5f8",
+	"uniqueIdentifer": "6c8d7900-c640-11ed-9bff-c516d1977834",
 	"x": -1,
 	"y": -1,
-	"width": 1024,
-	"height": 800,
+	"width": 672,
+	"height": 1536,
 	"bgColor": "#000000",
 	"neighbourLevels": [],
 	"customFields": {
 		"skin": 0,
-		"name": "Yo Mama",
-		"time": 150
+		"name": null,
+		"time": 0
 	},
 	"layers": [],
-	"entities": {
-		"counter": [
-			{
-				"id": "counter",
-				"iid": "40bbc120-c640-11ed-b0ef-93bb8e765302",
-				"layer": "entities",
-				"x": 416,
-				"y": 0,
-				"width": 192,
-				"height": 64,
-				"color": 3090658,
-				"customFields" : {}
-			}
-		],
-		"table": [
-			{
-				"id": "table",
-				"iid": "66df3e40-c640-11ed-b0ef-93affe3402cf",
-				"layer": "entities",
-				"x": 480,
-				"y": 320,
-				"width": 64,
-				"height": 64,
-				"color": 3123482,
-				"customFields" : {}
-			},
-			{
-				"id": "table",
-				"iid": "e485d6b0-c640-11ed-b0ef-4bcb553d8c24",
-				"layer": "entities",
-				"x": 480,
-				"y": 640,
-				"width": 64,
-				"height": 64,
-				"color": 3123482,
-				"customFields" : {}
-			},
-			{
-				"id": "table",
-				"iid": "eb750bd0-c640-11ed-b0ef-f3c60d7d1410",
-				"layer": "entities",
-				"x": 128,
-				"y": 480,
-				"width": 64,
-				"height": 64,
-				"color": 3123482,
-				"customFields" : {}
-			},
-			{
-				"id": "table",
-				"iid": "ec82ab40-c640-11ed-b0ef-4ded6c1c9f88",
-				"layer": "entities",
-				"x": 832,
-				"y": 480,
-				"width": 64,
-				"height": 64,
-				"color": 3123482,
-				"customFields" : {}
-			}
-		],
-		"chair": [
-			{
-				"id": "chair",
-				"iid": "73386810-c640-11ed-b0ef-df2d62fdaa67",
-				"layer": "entities",
-				"x": 448,
-				"y": 320,
-				"width": 32,
-				"height": 32,
-				"color": 12470831,
-				"customFields": {
-					"wave": 1
-				}
-			},
-			{
-				"id": "chair",
-				"iid": "73bcb340-c640-11ed-b0ef-4bc83b92834a",
-				"layer": "entities",
-				"x": 544,
-				"y": 352,
-				"width": 32,
-				"height": 32,
-				"color": 12470831,
-				"customFields": {
-					"wave": 1
-				}
-			},
-			{
-				"id": "chair",
-				"iid": "e6037600-c640-11ed-b0ef-a16db56d802b",
-				"layer": "entities",
-				"x": 544,
-				"y": 672,
-				"width": 32,
-				"height": 32,
-				"color": 12470831,
-				"customFields": {
-					"wave": 0
-				}
-			},
-			{
-				"id": "chair",
-				"iid": "f5fcf810-c640-11ed-b0ef-618e843ca169",
-				"layer": "entities",
-				"x": 96,
-				"y": 512,
-				"width": 32,
-				"height": 32,
-				"color": 12470831,
-				"customFields": {
-					"wave": 0
-				}
-			},
-			{
-				"id": "chair",
-				"iid": "f707d860-c640-11ed-b0ef-bb125f597605",
-				"layer": "entities",
-				"x": 800,
-				"y": 480,
-				"width": 32,
-				"height": 32,
-				"color": 12470831,
-				"customFields": {
-					"wave": 0
-				}
-			},
-			{
-				"id": "chair",
-				"iid": "f756bbb0-c640-11ed-b0ef-61610f0e2cdd",
-				"layer": "entities",
-				"x": 896,
-				"y": 512,
-				"width": 32,
-				"height": 32,
-				"color": 12470831,
-				"customFields": {
-					"wave": 0
-				}
-			}
-		]
-	}
+	"entities" : {}
 }
