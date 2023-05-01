@@ -41,7 +41,7 @@ public class TransitionManager : MonoBehaviour
 
     public void TransiIn()
     {
-        //SoundManager.i.MusicOut();
+        SoundManager.i.MusicOut();
         transi.gameObject.SetActive(true);
         transi.DOKill();
         transi.position = new Vector2(40 + Camera.main.transform.position.x, Camera.main.transform.position.y);
@@ -67,7 +67,6 @@ public class TransitionManager : MonoBehaviour
 
     public void LoadLevel(int level = -1)
     {
-        Debug.Log("DOUBOLON " + level);
         if (level > -1) SaveManager.i.level = level;
         StartCoroutine(LoadLevelCoroutine());
     }

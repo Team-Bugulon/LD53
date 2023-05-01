@@ -44,20 +44,30 @@ public class Titlescreen : MonoBehaviour
     public List<Sprite> kyurs;
     public List<Sprite> starss;
 
+    int totalScore = 0;
+
     // Start is called before the first frame update
     void Start()
     {
         TransitionManager.i.TransiOut();
 
-        //for (int i = 0; i < 14; i++)
-        //{
-        //    LevelSelectButton bobus = Instantiate(levelSelectButtonPrefab);
-        //    bobus.levelID = i;
-        //    bobus.transform.parent = levelSelectButtonContainer;
-        //    bobus.transform.localPosition = new Vector2(i % 5 * 1.5f, - Mathf.FloorToInt(i / 5) * 1.5f);
-        //}
+        foreach (Transform bobibou in levelSelectButtonContainer)
+        {
+            Destroy(bobibou.gameObject);
+        }
+
+        for (int i = 0; i < 20; i++)
+        {
+            LevelSelectButton bobus = Instantiate(levelSelectButtonPrefab);
+            bobus.levelID = i;
+            bobus.transform.parent = levelSelectButtonContainer;
+            bobus.transform.localPosition = new Vector2(i % 5 * 1.5f, -Mathf.FloorToInt(i / 5) * 1.5f);
+            totalScore += bobus.score;
+        }
+
 
         MainMenu();
+        SoundManager.i.PlayMusic("mus_menushort");
     }
 
     public void MainMenu()
@@ -80,19 +90,6 @@ public class Titlescreen : MonoBehaviour
     {
         mainMenu.SetActive(false);
         levelSelect.SetActive(true);
-
-        foreach(Transform bobibou in levelSelectButtonContainer)
-        {
-            Destroy(bobibou.gameObject);
-        }
-
-        for (int i = 0; i < 14; i++)
-        {
-            LevelSelectButton bobus = Instantiate(levelSelectButtonPrefab);
-            bobus.levelID = i;
-            bobus.transform.parent = levelSelectButtonContainer;
-            bobus.transform.localPosition = new Vector2(i % 5 * 1.5f, -Mathf.FloorToInt(i / 5) * 1.5f);
-        }
 
         UIOverseer.i.InitUI();
     }

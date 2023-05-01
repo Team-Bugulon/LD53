@@ -12,6 +12,8 @@ public class Walker : MonoBehaviour
     bool stunned = false;
     [SerializeField] float stunnedDuration = 1f;
 
+    public bool isPuffer = false;
+
     private void Start()
     {
         StartCoroutine(Move());
@@ -67,8 +69,15 @@ public class Walker : MonoBehaviour
     void Unstun()
     {
         stunned = false;
-        GetComponent<Animator>().Play("walker_idle");
-        transform.DOComplete();
-        transform.DOShakeScale(.4f, .5f, 20);
+        if (!isPuffer)
+        {
+            GetComponent<Animator>().Play("walker_idle");
+            transform.DOComplete();
+            transform.DOShakeScale(.4f, .5f, 20);
+        } else
+        {
+            GetComponent<Animator>().Play("walker_unstun");
+        }
+
     }
 }

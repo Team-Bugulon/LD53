@@ -12,6 +12,13 @@ public class Table : MonoBehaviour
 
     [SerializeField] GameObject circle;
 
+    public List<Sprite> sprites;
+
+    private void Start()
+    {
+        GetComponent<SpriteRenderer>().sprite = sprites[GameManager.i.world.skin];
+    }
+
     private void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.CompareTag("Player") && GameManager.i.player.atRest && !GameManager.i.player.stunned)

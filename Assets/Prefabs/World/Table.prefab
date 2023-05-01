@@ -339,6 +339,9 @@ MonoBehaviour:
   plateContainerL: {fileID: 3631797708778876269}
   plateContainerR: {fileID: 3631797709721314531}
   circle: {fileID: 1662400965969447527}
+  sprites:
+  - {fileID: 21300000, guid: 845b17297e0f2f24eba8cc13cdb98bb4, type: 3}
+  - {fileID: 21300000, guid: 94b351fec3c31cb4bbe16e65308089e0, type: 3}
 --- !u!70 &3631797709869192849
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

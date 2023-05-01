@@ -45,6 +45,7 @@ public class GameManager : MonoBehaviour
     public List<Sprite> puddleSprites;
     public List<Color> puddleColors;
     public List<RuntimeAnimatorController> customersRat;
+    public List<RuntimeAnimatorController> customersFish;
 
     public float timer = 0;
     public bool win = false;
@@ -111,6 +112,14 @@ public class GameManager : MonoBehaviour
         UpdateWave();
         UIManager.i.UpdateCustomerBubble(0, CustomerTotalQty, false);
         TransitionManager.i.TransiOut(1, player.transform.position.x, player.transform.position.y);
+
+        if (world.skin == 0)
+        {
+            SoundManager.i.PlayMusic("mus_ratworld");
+        } else
+        {
+            SoundManager.i.PlayMusic("mus_fishworld");
+        }
     }
 
     public int GetRandomDish()
@@ -186,6 +195,9 @@ public class GameManager : MonoBehaviour
     
     IEnumerator WinCoroutine()
     {
+        SoundManager.i.MusicOut();
+        yield return new WaitForSeconds(.75f);
+        player.win = true;
         yield return new WaitForSeconds(1.5f);
         UIManager.i.LevelWinScreen();
     }

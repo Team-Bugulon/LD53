@@ -225,9 +225,13 @@ MonoBehaviour:
   - {fileID: -1092166999, guid: 7bf311bd89613724cae8a203c5cf2658, type: 3}
   - {fileID: 257286863, guid: 7bf311bd89613724cae8a203c5cf2658, type: 3}
   buttonBehavior: 0
+  levelID: 0
   singleUse: 1
   usesAnimator: 0
   onPress:
+    m_PersistentCalls:
+      m_Calls: []
+  onHover:
     m_PersistentCalls:
       m_Calls: []
 --- !u!1 &131519814
@@ -364,9 +368,13 @@ MonoBehaviour:
   - {fileID: -891419347, guid: 38e72d70c757062478cbe2c7f7d5918f, type: 3}
   - {fileID: -15635131, guid: 38e72d70c757062478cbe2c7f7d5918f, type: 3}
   buttonBehavior: 2
+  levelID: 0
   singleUse: 1
   usesAnimator: 0
   onPress:
+    m_PersistentCalls:
+      m_Calls: []
+  onHover:
     m_PersistentCalls:
       m_Calls: []
 --- !u!1 &250090108
@@ -598,8 +606,8 @@ Camera:
   m_FocalLength: 50
   m_NormalizedViewPortRect:
     serializedVersion: 2
-    x: 0.078125
-    y: -0.08611111
+    x: 0
+    y: 0
     width: 1
     height: 1
   near clip plane: 0.3
@@ -1000,6 +1008,63 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1001 &812567884
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4869681914967187866, guid: a6035341364cbb947a655cc6b42f1156, type: 3}
+      propertyPath: m_Name
+      value: SoundManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 4869681914967187868, guid: a6035341364cbb947a655cc6b42f1156, type: 3}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4869681914967187868, guid: a6035341364cbb947a655cc6b42f1156, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4869681914967187868, guid: a6035341364cbb947a655cc6b42f1156, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4869681914967187868, guid: a6035341364cbb947a655cc6b42f1156, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4869681914967187868, guid: a6035341364cbb947a655cc6b42f1156, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4869681914967187868, guid: a6035341364cbb947a655cc6b42f1156, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4869681914967187868, guid: a6035341364cbb947a655cc6b42f1156, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4869681914967187868, guid: a6035341364cbb947a655cc6b42f1156, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4869681914967187868, guid: a6035341364cbb947a655cc6b42f1156, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4869681914967187868, guid: a6035341364cbb947a655cc6b42f1156, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4869681914967187868, guid: a6035341364cbb947a655cc6b42f1156, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: a6035341364cbb947a655cc6b42f1156, type: 3}
 --- !u!1 &885204697
 GameObject:
   m_ObjectHideFlags: 0
@@ -2470,9 +2535,13 @@ MonoBehaviour:
   - {fileID: 163717067, guid: 1c6342e05d541cc409cfeb93773813cc, type: 3}
   - {fileID: 271256936, guid: 1c6342e05d541cc409cfeb93773813cc, type: 3}
   buttonBehavior: 1
+  levelID: 0
   singleUse: 1
   usesAnimator: 0
   onPress:
+    m_PersistentCalls:
+      m_Calls: []
+  onHover:
     m_PersistentCalls:
       m_Calls: []
 --- !u!1001 &1894478784
@@ -2623,7 +2692,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   generate: 0
-  level: -1
+  level: 11
   player: {fileID: 0}
   world: {fileID: 1927430525}
   platePrefab: {fileID: 5151868280500828515, guid: 97eedf7814dac3540897858c3e1f55b4, type: 3}
@@ -2642,6 +2711,11 @@ MonoBehaviour:
   - {fileID: 9100000, guid: 0c8c7f3f252a8e94fbfee148f0021666, type: 2}
   - {fileID: 9100000, guid: 419af471874f93e41b3d01692cf7e5da, type: 2}
   - {fileID: 9100000, guid: c1b6d5085dd086a4fa35e0f26b7263c4, type: 2}
+  customersFish:
+  - {fileID: 9100000, guid: def848c6d07cb7444913b5a1652f858b, type: 2}
+  - {fileID: 9100000, guid: ae8c62912ec2827489b3b457783175f2, type: 2}
+  - {fileID: 9100000, guid: c512f6822f870524dbc53def264c56f9, type: 2}
+  - {fileID: 9100000, guid: 17ee8cc5497373542af1601bd5458366, type: 2}
   timer: 0
   win: 0
   score: 0
@@ -2672,9 +2746,11 @@ MonoBehaviour:
   door: {fileID: 4687033408197053524, guid: d8ac30d009c593a41aea54f0edaeb56d, type: 3}
   puddle: {fileID: 965557874100388980, guid: 6332741ed3c167645a17efa1f5744fbf, type: 3}
   walker: {fileID: -8533966573359742270, guid: 2c67181aaa65c1d4bab81a24c782c165, type: 3}
+  puffer: {fileID: 2073624881057981214, guid: 651b293bb1365c145b85a3640cc48130, type: 3}
   tiles:
   - {fileID: 11400000, guid: af4fe8d8cb09cbb4caf3178197bb6b76, type: 2}
   - {fileID: 11400000, guid: fefef0c6314b80b4bb81e29b70942a17, type: 2}
+  - {fileID: 11400000, guid: 5a8a25ee7906cf646887f87594626bbe, type: 2}
 --- !u!1 &2033624003
 GameObject:
   m_ObjectHideFlags: 0

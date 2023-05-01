@@ -96,6 +96,7 @@ public class World : MonoBehaviour
     public Door door;
     public Puddle puddle;
     public Walker walker;
+    public Walker puffer;
     public List<TileBase> tiles;
 
     public void Generate(int worldID)
@@ -138,6 +139,10 @@ public class World : MonoBehaviour
                 if (tileID != 0)
                 {
                     TileBase tile = tiles[tileID - 1];
+                    if (tileID - 1 == 0 && skin == 1)
+                    {
+                        tile = tiles[tileID - 1 + 2];
+                    }
                     tilemap.SetTile(new Vector3Int(x, mapSize.y - y - 1, 0), tile);
                 }
             }
@@ -218,7 +223,14 @@ public class World : MonoBehaviour
         {
             foreach (var ent in level.entities.walker)
             {
-                Walker c = Instantiate(walker);
+                Walker c;
+                if (skin == 0)
+                {
+                    c = Instantiate(walker);
+                } else
+                {
+                    c = Instantiate(puffer);
+                }
                 c.transform.parent = entitiesContainer;
                 Vector2 offset = new Vector2(1, 1);
                 c.transform.position = new Vector2(ent.x / 32f + offset.x, (level.height - ent.y) / 32f - offset.y);

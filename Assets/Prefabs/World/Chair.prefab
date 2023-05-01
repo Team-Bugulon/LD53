@@ -140,6 +140,9 @@ MonoBehaviour:
   wave: 0
   customerContainer: {fileID: 4516140749309753519}
   customerPrefab: {fileID: 9058438820622741260, guid: 125861bc9a953c9459a9a23a5504a4fa, type: 3}
+  sprites:
+  - {fileID: 21300000, guid: 565328acd13cd0f42bed72b85b94cee9, type: 3}
+  - {fileID: 21300000, guid: 6f92623350042794c869cae03e063896, type: 3}
 --- !u!1 &8776563450235310811
 GameObject:
   m_ObjectHideFlags: 0

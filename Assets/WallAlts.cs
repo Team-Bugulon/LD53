@@ -24,7 +24,14 @@ public class WallAlts : MonoBehaviour
             }
             else
             {
-                GetComponentsInChildren<SpriteRenderer>()[1].sprite = wallAlts[Random.Range(2, 5)];
+                if (wallSpritesheetPath == "Assets/WallAlts/gloups")
+                {
+                    GetComponentsInChildren<SpriteRenderer>()[1].sprite = wallAlts[Random.Range(2, 7)];
+                } else
+                {
+                    GetComponentsInChildren<SpriteRenderer>()[1].sprite = wallAlts[Random.Range(2, 5)];
+                }
+
             }
         }
 

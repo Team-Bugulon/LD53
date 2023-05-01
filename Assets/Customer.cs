@@ -38,8 +38,16 @@ public class Customer : MonoBehaviour
         GameManager.i.customers[wave].Add(this);
         GameManager.i.CustomerTotalQty++;
 
-        customerSkin = Random.Range(0, GameManager.i.customersRat.Count);
-        GetComponent<Animator>().runtimeAnimatorController = GameManager.i.customersRat[customerSkin];
+        if (GameManager.i.world.skin == 0)
+        {
+            customerSkin = Random.Range(0, GameManager.i.customersRat.Count);
+            GetComponent<Animator>().runtimeAnimatorController = GameManager.i.customersRat[customerSkin];
+        } else
+        {
+            customerSkin = Random.Range(0, GameManager.i.customersFish.Count);
+            GetComponent<Animator>().runtimeAnimatorController = GameManager.i.customersFish[customerSkin];
+        }
+
         GetComponent<Animator>().Play("idle");
 
 

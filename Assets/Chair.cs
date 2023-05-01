@@ -8,6 +8,13 @@ public class Chair : MonoBehaviour
     [SerializeField] Transform customerContainer;
     [SerializeField] Customer customerPrefab;
 
+    public List<Sprite> sprites;
+
+    private void Start()
+    {
+        GetComponent<SpriteRenderer>().sprite = sprites[GameManager.i.world.skin];
+    }
+    
     public void Init()
     {
         if (wave != 0)

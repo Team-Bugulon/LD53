@@ -43,7 +43,8 @@ public class Player : MonoBehaviour
     [SerializeField] SpriteRenderer sr;
     [HideInInspector] public Rigidbody2D rb;
     List<Plate> platesHeld;
-    
+
+    public bool win = false;
 
     [Header("References")]
     [SerializeField] Transform plateContainerL;
@@ -281,7 +282,7 @@ public class Player : MonoBehaviour
 
     void Animate()
     {
-        if (GameManager.i.win)
+        if (win)
         {
             PlayAnimation("player_win");
         }
@@ -340,7 +341,15 @@ public class Player : MonoBehaviour
         {
             Vector2 collisionDirection = DegreeToVector2(direction).normalized;
 
-            Hurt(collisionDirection);
+            Walker wk = collision.gameObject.GetComponent<Walker>();
+            if (wk == null)
+            {
+                Hurt(collisionDirection);
+            }
+            else
+            {
+                Hurt(collisionDirection, wk.isPuffer);
+            }
         }
     }
 
@@ -350,11 +359,19 @@ public class Player : MonoBehaviour
         {
             Vector2 collisionDirection = DegreeToVector2(direction).normalized;
 
-            Hurt(collisionDirection);
+            Walker wk = collision.gameObject.GetComponent<Walker>();
+            if (wk == null)
+            {
+                Hurt(collisionDirection);
+            }
+            else
+            {
+                Hurt(collisionDirection, wk.isPuffer);
+            }
         }
     }
 
-    public void Hurt(Vector2 collisionDirection)
+    public void Hurt(Vector2 collisionDirection, bool puffer = false)
     {
         if (canBeHurt)
         {
@@ -365,7 +382,7 @@ public class Player : MonoBehaviour
             stunned = true;
             rb.velocity = Vector2.zero;
 
-            //rb.AddForce(-collisionDirection * collisionForce);
+            if (puffer) rb.AddForce(-collisionDirection * collisionForce * 1.3f);
             //GameManager.i.ShakeScreen();
             //SoundManager.i.Play("Damage2", .1f, .8f);
             StartCoroutine(StunTimer(-collisionDirection * collisionForce));
