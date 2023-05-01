@@ -67,6 +67,7 @@ public class TransitionManager : MonoBehaviour
 
     public void LoadLevel(int level = -1)
     {
+        Debug.Log("DOUBOLON " + level);
         if (level > -1) SaveManager.i.level = level;
         StartCoroutine(LoadLevelCoroutine());
     }
@@ -75,8 +76,7 @@ public class TransitionManager : MonoBehaviour
     {
         TransiIn();
         yield return new WaitForSecondsRealtime(2f);
-        //UnityEngine.SceneManagement.SceneManager.LoadScene(2);
-        UnityEngine.SceneManagement.SceneManager.LoadScene(0);
+        UnityEngine.SceneManagement.SceneManager.LoadScene(2);
     }
 
     public void MainMenu()

@@ -118,10 +118,27 @@ public class SaveManager : MonoBehaviour
 
     public void NewScore(int levelID, float time)
     {
-        if (time < data.times[levelID])
+        if (data.times[levelID] == 0 || time < data.times[levelID])
         {
             data.times[levelID] = time;
             Save();
+        }
+    }
+
+    public bool IsLevelUnlocked(int levelID)
+    {
+        if (levelID == 0)
+        {
+            return true;
+        } else
+        {
+            if (data.times[levelID - 1] > 0)
+            {
+                return true;
+            } else
+            {
+                return false;
+            }
         }
     }
 }

@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: c3042482f4f8577448aaf4c183eea59e
+guid: fecc1cc4a8440064483ae63c0b3d857d
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -128,148 +128,85 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: dish_0
+      name: kyur_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 32
-        height: 64
+        width: 136
+        height: 123
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5ea430e41c096e34cb2f7ead5fe0c68f
-      internalID: -1637665319
+      spriteID: 52162f24555c7984880948c6f06714fc
+      internalID: -1378932429
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: dish_1
+      name: kyur_1
       rect:
         serializedVersion: 2
-        x: 32
+        x: 136
         y: 0
-        width: 32
-        height: 64
+        width: 136
+        height: 123
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 10a5f53aa64e93c449b20b1577bcee71
-      internalID: -1406539244
+      spriteID: 90c1d6cd564bcdf4c92e2e6e62667d36
+      internalID: 2030123130
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: dish_2
+      name: kyur_2
       rect:
         serializedVersion: 2
-        x: 64
+        x: 272
         y: 0
-        width: 32
-        height: 64
+        width: 136
+        height: 123
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f16e9036cb9b94a448c3d0f305542771
-      internalID: -500850325
+      spriteID: 3919d9fa41c1c0e4b85e141c639c1db2
+      internalID: 1430611754
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: dish_3
+      name: kyur_3
       rect:
         serializedVersion: 2
-        x: 96
+        x: 408
         y: 0
-        width: 32
-        height: 64
+        width: 136
+        height: 123
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: dd33a0ceb5215d0428e4a27b3d5a0933
-      internalID: 1397765707
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: dish_4
-      rect:
-        serializedVersion: 2
-        x: 128
-        y: 0
-        width: 32
-        height: 64
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c3f2b170b6f06a04db9fe4c96ac99c42
-      internalID: 2098148584
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: dish_5
-      rect:
-        serializedVersion: 2
-        x: 160
-        y: 0
-        width: 32
-        height: 64
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: aa9cf2b62096e694080116b67752f3e9
-      internalID: 511498327
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: dish_6
-      rect:
-        serializedVersion: 2
-        x: 192
-        y: 0
-        width: 32
-        height: 64
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 904d0c6b9fe7f444b9a2b1a928b40f81
-      internalID: -1637869991
+      spriteID: e9f3d300771b92f4492cfac6c7618e7f
+      internalID: -848735639
       vertices: []
       indices: 
       edges: []
@@ -285,13 +222,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      dish_1: -1406539244
-      dish_6: -1637869991
-      dish_3: 1397765707
-      dish_2: -500850325
-      dish_5: 511498327
-      dish_0: -1637665319
-      dish_4: 2098148584
+      kyur_3: -848735639
+      kyur_1: 2030123130
+      kyur_2: 1430611754
+      kyur_0: -1378932429
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

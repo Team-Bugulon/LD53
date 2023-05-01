@@ -72,21 +72,30 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        var objects = Resources.LoadAll<Sprite>("Assets/dish");
-        dishSprites = objects.Where(q => q is Sprite).Cast<Sprite>().ToList();
-
         var objects2 = Resources.LoadAll<Sprite>("Assets/sludge");
         sludgeSprites = objects2.Where(q => q is Sprite).Cast<Sprite>().ToList();
 
         var objects3 = Resources.LoadAll<Sprite>("Assets/puddle");
         puddleSprites = objects3.Where(q => q is Sprite).Cast<Sprite>().ToList();
 
+        GenerateWorld();
+
+        if (world.skin == 0)
+        {
+            var objects = Resources.LoadAll<Sprite>("Assets/dish");
+            dishSprites = objects.Where(q => q is Sprite).Cast<Sprite>().ToList();
+        } else
+        {
+            var objects = Resources.LoadAll<Sprite>("Assets/dish2");
+            dishSprites = objects.Where(q => q is Sprite).Cast<Sprite>().ToList();
+        }
+
         availableDish = new List<int>();
         for (int i = 0; i < dishSprites.Count; i++)
         {
             availableDish.Add(i);
         }
-        
+
         //shuffle
         for (int i = 0; i < availableDish.Count; i++)
         {
@@ -97,7 +106,8 @@ public class GameManager : MonoBehaviour
         }
         //availableDish.Sort((a, b) => 1 - 2 * Random.Range(0, 1));
 
-        GenerateWorld();
+
+
         UpdateWave();
         UIManager.i.UpdateCustomerBubble(0, CustomerTotalQty, false);
         TransitionManager.i.TransiOut(1, player.transform.position.x, player.transform.position.y);

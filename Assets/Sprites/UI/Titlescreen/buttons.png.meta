@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: c3042482f4f8577448aaf4c183eea59e
+guid: 429228ff2ea4902499c2c96dfe7f6df0
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -128,148 +128,64 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: dish_0
+      name: buttons_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 32
+        width: 144
         height: 64
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5ea430e41c096e34cb2f7ead5fe0c68f
-      internalID: -1637665319
+      spriteID: f68113f71d42c124398b69c80152f385
+      internalID: 725956245
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: dish_1
+      name: buttons_1
       rect:
         serializedVersion: 2
-        x: 32
+        x: 144
         y: 0
-        width: 32
+        width: 144
         height: 64
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 10a5f53aa64e93c449b20b1577bcee71
-      internalID: -1406539244
+      spriteID: e90259111ab4fdd43b2630dd165acfe2
+      internalID: -1288489783
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: dish_2
+      name: buttons_2
       rect:
         serializedVersion: 2
-        x: 64
+        x: 288
         y: 0
-        width: 32
+        width: 144
         height: 64
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f16e9036cb9b94a448c3d0f305542771
-      internalID: -500850325
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: dish_3
-      rect:
-        serializedVersion: 2
-        x: 96
-        y: 0
-        width: 32
-        height: 64
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: dd33a0ceb5215d0428e4a27b3d5a0933
-      internalID: 1397765707
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: dish_4
-      rect:
-        serializedVersion: 2
-        x: 128
-        y: 0
-        width: 32
-        height: 64
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c3f2b170b6f06a04db9fe4c96ac99c42
-      internalID: 2098148584
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: dish_5
-      rect:
-        serializedVersion: 2
-        x: 160
-        y: 0
-        width: 32
-        height: 64
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: aa9cf2b62096e694080116b67752f3e9
-      internalID: 511498327
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: dish_6
-      rect:
-        serializedVersion: 2
-        x: 192
-        y: 0
-        width: 32
-        height: 64
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 904d0c6b9fe7f444b9a2b1a928b40f81
-      internalID: -1637869991
+      spriteID: 1d14b5cee5e641b42a19562aab2fa907
+      internalID: -1974679365
       vertices: []
       indices: 
       edges: []
@@ -285,13 +201,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      dish_1: -1406539244
-      dish_6: -1637869991
-      dish_3: 1397765707
-      dish_2: -500850325
-      dish_5: 511498327
-      dish_0: -1637665319
-      dish_4: 2098148584
+      buttons_2: -1974679365
+      buttons_0: 725956245
+      buttons_1: -1288489783
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

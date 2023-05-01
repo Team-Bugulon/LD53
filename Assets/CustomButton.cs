@@ -10,6 +10,7 @@ public class CustomButton : MonoBehaviour
     SpriteRenderer sr;
 
     [SerializeField] int buttonBehavior = 0;
+    public int levelID = 0;
 
     [SerializeField] bool singleUse = true;
     bool used = false;
@@ -47,6 +48,7 @@ public class CustomButton : MonoBehaviour
         {
             sr.sprite = sprites[1];
         }
+        onHover.Invoke();
         //SoundManager.i.Play("MenuMove", .15f, .8f);
     }
 
@@ -113,8 +115,17 @@ public class CustomButton : MonoBehaviour
                 Debug.Log("NEXT LEVEL");
                 TransitionManager.i.NextLevel();
                 break;
+            case 3:
+                Debug.Log("open level select");
+                break;
+            case 4:
+                Debug.Log("load level");
+                TransitionManager.i.LoadLevel(levelID);
+                break;
         }
     }
 
     public UnityEvent onPress;
+
+    public UnityEvent onHover;
 }

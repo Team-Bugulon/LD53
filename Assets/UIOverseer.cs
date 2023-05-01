@@ -65,6 +65,11 @@ public class UIOverseer : MonoBehaviour
 
     public void InitUI()
     {
+        Invoke("Brogli", .15f);
+    }
+
+    void Brogli()
+    {
         isActive = true;
         firstPressed = false;
         cursorPos = Vector2Int.zero;
@@ -96,6 +101,7 @@ public class UIOverseer : MonoBehaviour
             internalLayout.Add(groups[key].OrderBy(x => x.transform.position.x).ToList());
         }
 
+        DefaultSelect();
     }
 
     private void Move(Vector2 dir)
@@ -115,11 +121,16 @@ public class UIOverseer : MonoBehaviour
             }
             else
             {
-                moveDir = new Vector2(0, Mathf.Sign(dir.y));
+                moveDir = new Vector2(0, -Mathf.Sign(dir.y));
                 cursorPos = new Vector2Int(
                     0,
                     Mathf.Clamp(cursorPos.y + (int)moveDir.y, 0, internalLayout.Count - 1)
                     );
+                
+                cursorPos = new Vector2Int(
+                    Mathf.Clamp(cursorPos.x, 0, internalLayout[cursorPos.y].Count - 1),
+                    cursorPos.y
+                    );   
             }
         }
 
@@ -149,5 +160,10 @@ public class UIOverseer : MonoBehaviour
         {
             isActive = false;
         }
+    }
+
+    private void DefaultSelect()
+    {
+        Move(Vector2.left);
     }
 }
