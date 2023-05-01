@@ -78,6 +78,11 @@ public class CustomButton : MonoBehaviour
             ButtonBehavior();
             Invoke("ResetHover", .1f);
         }
+
+        if (singleUse)
+        {
+            UIOverseer.i.isActive = false;
+        }
     }
 
     void ResetHover()

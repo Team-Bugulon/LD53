@@ -336,7 +336,7 @@ public class Player : MonoBehaviour
     
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (!atRest && realSpeed > 7f && !inKitchen && !collision.gameObject.CompareTag("Counter"))
+        if (!atRest && realSpeed > 5.5f && !inKitchen && !collision.gameObject.CompareTag("Counter"))
         {
             Vector2 collisionDirection = DegreeToVector2(direction).normalized;
 
@@ -346,7 +346,7 @@ public class Player : MonoBehaviour
 
     private void OnCollisionStay2D(Collision2D collision)
     {
-        if (!atRest && realSpeed > 7f && !inKitchen && !collision.gameObject.CompareTag("Counter"))
+        if (!atRest && realSpeed > 5.5f && !inKitchen && !collision.gameObject.CompareTag("Counter"))
         {
             Vector2 collisionDirection = DegreeToVector2(direction).normalized;
 

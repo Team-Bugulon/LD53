@@ -37,7 +37,7 @@ public class UIOverseer : MonoBehaviour
 
     List<List<CustomButton>> internalLayout;
 
-    bool isActive = false;
+    public bool isActive = false;
 
     bool movePerformed = false;
 
