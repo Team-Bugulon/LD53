@@ -41,7 +41,10 @@ public class GameManager : MonoBehaviour
     [Header("Libs")]
     public List<Sprite> dishSprites;
     public List<Sprite> sludgeSprites;
+    public List<Sprite> puddleSprites;
+    public List<Color> puddleColors;
     public List<RuntimeAnimatorController> customersRat;
+
 
     int wave = 0;
     List<int> availableDish;
@@ -69,6 +72,9 @@ public class GameManager : MonoBehaviour
 
         var objects2 = UnityEditor.AssetDatabase.LoadAllAssetsAtPath("Assets/Sprites/Gameplay/sludge.png");
         sludgeSprites = objects2.Where(q => q is Sprite).Cast<Sprite>().ToList();
+
+        var objects3 = UnityEditor.AssetDatabase.LoadAllAssetsAtPath("Assets/Sprites/World/puddle/puddle.png");
+        puddleSprites = objects3.Where(q => q is Sprite).Cast<Sprite>().ToList();
 
         availableDish = new List<int>();
         for (int i = 0; i < dishSprites.Count; i++)

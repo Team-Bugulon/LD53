@@ -16,6 +16,9 @@ public class CustomFieldsChair
 }
 public class TableEntity : Entity { };
 
+public class PuddleEntity : Entity { };
+
+
 public class Entity
 {
     public string id = null;
@@ -29,6 +32,7 @@ public class EntitiesContainer
     public List<ChairEntity> chair;
     public List<TableEntity> table;
     public List<DoorEntity> door;
+    public List<PuddleEntity> puddle;
 }
 
 public class CustomFields
@@ -76,6 +80,7 @@ public class World : MonoBehaviour
     public Table table;
     public KitchenArea kitchenArea;
     public Door door;
+    public Puddle puddle;
     public List<TileBase> tiles;
 
     public void Generate(int worldID)
@@ -182,6 +187,18 @@ public class World : MonoBehaviour
                 c.transform.position = new Vector2(ent.x / 32f + offset.x, (level.height - ent.y) / 32f - offset.y);
             }
         }
+
+        if (level.entities.puddle != null)
+        {
+            foreach (var ent in level.entities.puddle)
+            {
+                Puddle c = Instantiate(puddle);
+                c.transform.parent = entitiesContainer;
+                Vector2 offset = new Vector2(1, 1);
+                c.transform.position = new Vector2(ent.x / 32f + offset.x, (level.height - ent.y) / 32f - offset.y);
+            }
+        }
+
 
     }
 

@@ -722,12 +722,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   generate: 0
-  level: 2
+  level: 1
   player: {fileID: 0}
   world: {fileID: 1927430525}
   platePrefab: {fileID: 5151868280500828515, guid: 97eedf7814dac3540897858c3e1f55b4, type: 3}
   dishSprites: []
   sludgeSprites: []
+  puddleSprites: []
+  puddleColors:
+  - {r: 0.43529412, g: 0.24705882, b: 0.13725491, a: 1}
+  - {r: 0.2509804, g: 0.38431373, b: 0.21568628, a: 1}
+  - {r: 0.3647059, g: 0.3254902, b: 0.14901961, a: 1}
+  - {r: 0.15686275, g: 0.21176471, b: 0.34117648, a: 1}
+  - {r: 0.13333334, g: 0.28627452, b: 0.1764706, a: 1}
+  - {r: 0.37254903, g: 0.16470589, b: 0.25490198, a: 1}
   customersRat:
   - {fileID: 9100000, guid: 5f91458fb21ce4848b645854798f451d, type: 2}
   - {fileID: 9100000, guid: 0c8c7f3f252a8e94fbfee148f0021666, type: 2}
@@ -758,6 +766,7 @@ MonoBehaviour:
   table: {fileID: 7491452395561302385, guid: db6e7beecf03ed64da27cfc1362508f4, type: 3}
   kitchenArea: {fileID: 7942257792156988633, guid: 40cbefdf2ff30b64d9ef2b624102ea49, type: 3}
   door: {fileID: 4687033408197053524, guid: d8ac30d009c593a41aea54f0edaeb56d, type: 3}
+  puddle: {fileID: 965557874100388980, guid: 6332741ed3c167645a17efa1f5744fbf, type: 3}
   tiles:
   - {fileID: 11400000, guid: af4fe8d8cb09cbb4caf3178197bb6b76, type: 2}
   - {fileID: 11400000, guid: fefef0c6314b80b4bb81e29b70942a17, type: 2}

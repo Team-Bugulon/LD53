@@ -1,11 +1,15 @@
+using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System.Numerics;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Experimental.GlobalIllumination;
 using UnityEngine.InputSystem;
 using UnityEngine.SocialPlatforms;
+using Vector2 = UnityEngine.Vector2;
+using Vector3 = UnityEngine.Vector3;
 
 public class Player : MonoBehaviour
 {
@@ -417,6 +421,21 @@ public class Player : MonoBehaviour
 
             Gizmos.color = Color.red;
             Gizmos.DrawLine(transform.position, (Vector3)movementInput.normalized + transform.position);
+        }
+    }
+
+    public void Slide(float modifier, Color color)
+    {
+        //sr.transform.DOComplete();
+        //sr.transform.DOLocalRotate(new Vector3(0, 0, 360), .3f, RotateMode.LocalAxisAdd).OnComplete(() => sr.transform.localRotation = Quaternion.identity);
+        realSpeed *= modifier;
+        realSpeed = Mathf.Min(realSpeed, moveSpeed * 2);
+
+        foreach( var trail in GetComponentsInChildren<TrailRenderer>())
+        {
+            trail.startColor = color;
+            DOTween.To(() => trail.startColor, x => trail.startColor = x, trail.endColor, 3f).SetEase(Ease.InExpo);
+            //trail.endColor = color;
         }
     }
 }
