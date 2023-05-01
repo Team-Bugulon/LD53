@@ -1,0 +1,59 @@
+{
+	"identifier": "level_2",
+	"uniqueIdentifer": "4a623390-c640-11ed-b37a-014af9195e7c",
+	"x": -1,
+	"y": -1,
+	"width": 1248,
+	"height": 1504,
+	"bgColor": "#000000",
+	"neighbourLevels": [],
+	"customFields": {
+		"skin": 0,
+		"name": "Very Important Rats",
+		"time": 300
+	},
+	"layers": [],
+	"entities": {
+		"counter": [
+			{
+				"id": "counter",
+				"iid": "ce7fa560-c640-11ed-b0ef-890a46f5950e",
+				"layer": "entities",
+				"x": 512,
+				"y": 128,
+				"width": 192,
+				"height": 64,
+				"color": 3090658,
+				"customFields" : {}
+			}
+		],
+		"table": [
+			{
+				"id": "table",
+				"iid": "0be0e770-c640-11ed-b0ef-59e07d1c3cf6",
+				"layer": "entities",
+				"x": 576,
+				"y": 1120,
+				"width": 64,
+				"height": 64,
+				"color": 3123482,
+				"customFields" : {}
+			}
+		],
+		"chair": [
+			{
+				"id": "chair",
+				"iid": "0cd30fa0-c640-11ed-b0ef-f5cf4cc9f923",
+				"layer": "entities",
+				"x": 544,
+				"y": 1152,
+				"width": 32,
+				"height": 32,
+				"color": 12470831,
+				"customFields": {
+					"wave": 1
+				}
+			}
+		]
+	}
+}
