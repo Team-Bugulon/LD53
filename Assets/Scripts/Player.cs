@@ -226,46 +226,52 @@ public class Player : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (!stunned)
+        if (!GameManager.i.win)
         {
-            if (movementInput != Vector2.zero && !isBraking)
+            if (!stunned)
             {
-                //get vector angle from movementInput
-                var newDirection = Vector2.SignedAngle(Vector2.right, movementInput);
-
-                direction = Mathf.LerpAngle(direction, newDirection, turnSpeed);
-            }
-
-            if (isBraking || !actionAfterPause)
-            {
-                realSpeed = Mathf.Lerp(realSpeed, 0, brakeSpeed);
-            }
-            else
-            {
-                if (!inKitchen)
+                if (movementInput != Vector2.zero && !isBraking)
                 {
-                    realSpeed = Mathf.Lerp(realSpeed, moveSpeed, accelerateSpeed);
-                } else
-                {
-                    realSpeed = Mathf.Lerp(realSpeed, kitchenSpeed, accelerateSpeed);
+                    //get vector angle from movementInput
+                    var newDirection = Vector2.SignedAngle(Vector2.right, movementInput);
+
+                    direction = Mathf.LerpAngle(direction, newDirection, turnSpeed);
                 }
-                
-            }
 
-            if (realSpeed <= 3f)
-            {
-                atRest = true;
-                //movementInput = Vector2.zero;
-                if (movementInput == Vector2.zero) actionAfterPause = false;
-            }
-            else
-            {
-                atRest = false;
-            }
+                if (isBraking || !actionAfterPause)
+                {
+                    realSpeed = Mathf.Lerp(realSpeed, 0, brakeSpeed);
+                }
+                else
+                {
+                    if (!inKitchen)
+                    {
+                        realSpeed = Mathf.Lerp(realSpeed, moveSpeed, accelerateSpeed);
+                    }
+                    else
+                    {
+                        realSpeed = Mathf.Lerp(realSpeed, kitchenSpeed, accelerateSpeed);
+                    }
 
-            rb.velocity = DegreeToVector2(direction) * realSpeed;
+                }
+
+                if (realSpeed <= 3f)
+                {
+                    atRest = true;
+                    //movementInput = Vector2.zero;
+                    if (movementInput == Vector2.zero) actionAfterPause = false;
+                }
+                else
+                {
+                    atRest = false;
+                }
+
+                rb.velocity = DegreeToVector2(direction) * realSpeed;
+            }
+        } else
+        {
+            rb.velocity = Vector2.zero;
         }
-
     }
 
     private void Update()
@@ -275,7 +281,11 @@ public class Player : MonoBehaviour
 
     void Animate()
     {
-        if (stunned)
+        if (GameManager.i.win)
+        {
+            PlayAnimation("player_win");
+        }
+        else if (stunned)
         {
             PlayAnimation("player_hurt");
         }

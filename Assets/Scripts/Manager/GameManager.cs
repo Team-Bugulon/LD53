@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
+using UnityEngine.SocialPlatforms.Impl;
 
 public class GameManager : MonoBehaviour
 {
@@ -50,6 +51,7 @@ public class GameManager : MonoBehaviour
     int wave = 0;
     List<int> availableDish;
     Counter counter;
+    public int score = 0;
 
     public Dictionary<int, List<Customer>> customers;
     public int CustomerTotalQty = 0;
@@ -150,8 +152,29 @@ public class GameManager : MonoBehaviour
 
     void Win()
     {
-        win = true;
-        Debug.Log("GAME WIN !");
+        if (!win)
+        {
+            win = true;
+            if (timer >= world.time)
+            {
+                score = 3;
+            } else if (timer+10 >= world.time)
+            {
+                score = 2;
+            } else
+            {
+                score = 1;
+            }
+            Debug.Log("GAME WIN !");
+            StartCoroutine(WinCoroutine());
+        }
+
+    }
+    
+    IEnumerator WinCoroutine()
+    {
+        yield return new WaitForSeconds(1.5f);
+        UIManager.i.LevelWinScreen();
     }
 
     public void SpawnPlate(int dishType)
