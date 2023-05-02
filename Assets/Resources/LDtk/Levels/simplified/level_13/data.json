@@ -1,0 +1,220 @@
+{
+	"identifier": "level_13",
+	"uniqueIdentifer": "2e80f5d0-c640-11ed-9d1d-05c4671ea67e",
+	"x": -1,
+	"y": -1,
+	"width": 1440,
+	"height": 2784,
+	"bgColor": "#000000",
+	"neighbourLevels": [],
+	"customFields": {
+		"skin": 1,
+		"name": "Worm World",
+		"time": 400
+	},
+	"layers": [],
+	"entities": {
+		"table": [
+			{
+				"id": "table",
+				"iid": "92bd5f80-c640-11ed-9d1d-93b8e70460d8",
+				"layer": "entities",
+				"x": 352,
+				"y": 992,
+				"width": 64,
+				"height": 64,
+				"color": 3123482,
+				"customFields" : {}
+			},
+			{
+				"id": "table",
+				"iid": "941c5340-c640-11ed-9d1d-1d9367f090d3",
+				"layer": "entities",
+				"x": 992,
+				"y": 1312,
+				"width": 64,
+				"height": 64,
+				"color": 3123482,
+				"customFields" : {}
+			},
+			{
+				"id": "table",
+				"iid": "953e16f0-c640-11ed-9d1d-a3ba98e7d1bb",
+				"layer": "entities",
+				"x": 608,
+				"y": 1632,
+				"width": 64,
+				"height": 64,
+				"color": 3123482,
+				"customFields" : {}
+			},
+			{
+				"id": "table",
+				"iid": "98d6ce10-c640-11ed-9d1d-27af01a17cdd",
+				"layer": "entities",
+				"x": 992,
+				"y": 1952,
+				"width": 64,
+				"height": 64,
+				"color": 3123482,
+				"customFields" : {}
+			},
+			{
+				"id": "table",
+				"iid": "9ad89180-c640-11ed-9d1d-a3060cbad99f",
+				"layer": "entities",
+				"x": 608,
+				"y": 2240,
+				"width": 64,
+				"height": 64,
+				"color": 3123482,
+				"customFields" : {}
+			}
+		],
+		"chair": [
+			{
+				"id": "chair",
+				"iid": "9f50fa40-c640-11ed-9d1d-057961edca01",
+				"layer": "entities",
+				"x": 320,
+				"y": 1024,
+				"width": 32,
+				"height": 32,
+				"color": 12470831,
+				"customFields": {
+					"wave": 1
+				}
+			},
+			{
+				"id": "chair",
+				"iid": "9fad9930-c640-11ed-9d1d-bf1ed6261ee1",
+				"layer": "entities",
+				"x": 416,
+				"y": 992,
+				"width": 32,
+				"height": 32,
+				"color": 12470831,
+				"customFields": {
+					"wave": 1
+				}
+			},
+			{
+				"id": "chair",
+				"iid": "a3ebdf20-c640-11ed-9d1d-b574583d1a0a",
+				"layer": "entities",
+				"x": 1056,
+				"y": 1344,
+				"width": 32,
+				"height": 32,
+				"color": 12470831,
+				"customFields": {
+					"wave": 2
+				}
+			},
+			{
+				"id": "chair",
+				"iid": "a44dae30-c640-11ed-9d1d-fd8f8d998d6f",
+				"layer": "entities",
+				"x": 960,
+				"y": 1312,
+				"width": 32,
+				"height": 32,
+				"color": 12470831,
+				"customFields": {
+					"wave": 2
+				}
+			},
+			{
+				"id": "chair",
+				"iid": "a5234db0-c640-11ed-9d1d-81d053097c2d",
+				"layer": "entities",
+				"x": 576,
+				"y": 1664,
+				"width": 32,
+				"height": 32,
+				"color": 12470831,
+				"customFields": {
+					"wave": 1
+				}
+			},
+			{
+				"id": "chair",
+				"iid": "a65eb3e0-c640-11ed-9d1d-dbcc3f8718ef",
+				"layer": "entities",
+				"x": 1056,
+				"y": 1984,
+				"width": 32,
+				"height": 32,
+				"color": 12470831,
+				"customFields": {
+					"wave": 1
+				}
+			},
+			{
+				"id": "chair",
+				"iid": "a773f470-c640-11ed-9d1d-75e6c65c6e8c",
+				"layer": "entities",
+				"x": 576,
+				"y": 2272,
+				"width": 32,
+				"height": 32,
+				"color": 12470831,
+				"customFields": {
+					"wave": 2
+				}
+			},
+			{
+				"id": "chair",
+				"iid": "a7f30f80-c640-11ed-9d1d-e539b85c84d8",
+				"layer": "entities",
+				"x": 672,
+				"y": 2240,
+				"width": 32,
+				"height": 32,
+				"color": 12470831,
+				"customFields": {
+					"wave": 0
+				}
+			},
+			{
+				"id": "chair",
+				"iid": "f1fb1640-c640-11ed-9d1d-191a9686d28b",
+				"layer": "entities",
+				"x": 672,
+				"y": 1632,
+				"width": 32,
+				"height": 32,
+				"color": 12470831,
+				"customFields": {
+					"wave": 0
+				}
+			}
+		],
+		"counter": [
+			{
+				"id": "counter",
+				"iid": "b423a2b0-c640-11ed-9d1d-a106ed09e97c",
+				"layer": "entities",
+				"x": 672,
+				"y": 192,
+				"width": 192,
+				"height": 64,
+				"color": 3090658,
+				"customFields" : {}
+			}
+		],
+		"door": [
+			{
+				"id": "door",
+				"iid": "c5b92180-c640-11ed-9d1d-2ffde2f3ae71",
+				"layer": "entities",
+				"x": 672,
+				"y": 416,
+				"width": 96,
+				"height": 64,
+				"color": 16711932,
+				"customFields" : {}
+			}
+		]
+	}
+}
