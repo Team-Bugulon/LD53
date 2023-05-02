@@ -100,7 +100,11 @@ public class SaveManager : MonoBehaviour
 
         int score = 0;
 
-        if (data.times[levelID] <= time)
+        if (data.times[levelID] == 0)
+        {
+            score = 0;
+        }
+        else if (data.times[levelID] <= time)
         {
             score = 3;
         }

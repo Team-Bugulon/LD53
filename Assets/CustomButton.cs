@@ -40,6 +40,7 @@ public class CustomButton : MonoBehaviour
 
     public void Hover()
     {
+        SoundManager.i.Play("snd_menuUPDWN", .2f, .8f);
         if (usesAnimator)
         {
             an.Play("hover");
@@ -66,6 +67,7 @@ public class CustomButton : MonoBehaviour
 
     public void Press()
     {
+        SoundManager.i.Play("snd_menuSELECT", .2f, .8f);
         if ((singleUse && !used) || !singleUse) {
             used = true;
             if (usesAnimator)

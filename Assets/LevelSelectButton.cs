@@ -63,7 +63,8 @@ public class LevelSelectButton : MonoBehaviour
         text.text = "<size=.5>"+(levelID+1).ToString();
         stars.sprite = starsSprite[score];
 
-        GetComponentInChildren<CustomButton>().levelID = levelID;
+        CustomButton cb = GetComponentInChildren<CustomButton>();
+        if (cb != null) cb.levelID = levelID;
     }
 
     public void OnHover()

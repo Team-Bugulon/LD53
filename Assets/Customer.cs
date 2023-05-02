@@ -92,6 +92,14 @@ public class Customer : MonoBehaviour
     {
         if (state == CustomerState.Ordering)
         {
+            if (GameManager.i.world.skin == 0)
+            {
+                SoundManager.i.Play("snd_ratorder", .2f, .8f);
+            }
+            else
+            {
+                SoundManager.i.Play("snd_fishtalk", .2f, .8f);
+            }
             dishType = GameManager.i.GetRandomDish();
             state = CustomerState.Waiting;
             speech.SetDish(dishType);
@@ -104,6 +112,13 @@ public class Customer : MonoBehaviour
             if (GameManager.i.player.DiscardPlate(dishType, this))
             {
                 state = CustomerState.Satisfied;
+                if (GameManager.i.world.skin == 0)
+                {
+                    SoundManager.i.Play("snd_ratrecievesingle2", .2f, .8f);
+                } else
+                {
+                    SoundManager.i.Play("snd_fishreceive", .2f, .8f);
+                }
                 transform.DOComplete();
                 transform.DOShakeScale(.4f, .5f, 20);
                 speech.gameObject.SetActive(false);

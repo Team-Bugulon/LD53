@@ -85,6 +85,7 @@ public class UIManager : MonoBehaviour
         for (int i = 0; i<GameManager.i.score; i++)
         {
             stars[i].SetActive(true);
+            SoundManager.i.PlayPitch("snd_star_get", 1 + .1f*i, .6f);
             yield return new WaitForSecondsRealtime(.35f);
         }
     }

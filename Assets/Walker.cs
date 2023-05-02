@@ -62,6 +62,13 @@ public class Walker : MonoBehaviour
                 Invoke("Unstun", stunnedDuration);
                 transform.DOComplete();
                 transform.DOShakeScale(.4f, .5f, 20);
+                if (isPuffer)
+                {
+                    SoundManager.i.Play("snd_pufferup", .2f, .8f);
+                } else
+                {
+                    SoundManager.i.Play("snd_bigrathit", .2f, .8f);
+                }
             }
         }
     }

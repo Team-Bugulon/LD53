@@ -71,6 +71,7 @@ public class Player : MonoBehaviour
         if (ctx.performed && !controlsLocked)
         {
             isBraking = true;
+            if (realSpeed > 2f) SoundManager.i.Play("snd_brakev3", .05f, .8f);
         }
         else if (ctx.canceled)
         {
@@ -285,14 +286,17 @@ public class Player : MonoBehaviour
         if (win)
         {
             PlayAnimation("player_win");
+            SoundManager.i.moveLoop.Stop();
         }
         else if (stunned)
         {
             PlayAnimation("player_hurt");
+            SoundManager.i.moveLoop.Stop();
         }
         else if (atRest)
         {
             PlayAnimation("player_idle");
+            SoundManager.i.moveLoop.Stop();
         }
         else if (isBraking)
         {
@@ -309,6 +313,7 @@ public class Player : MonoBehaviour
                 transform.localScale = Vector3.one;
             }
             PlayAnimation("player_brake_" + suffix);
+            SoundManager.i.moveLoop.Stop();
         } else
         {
             string suffix = "front";
@@ -325,6 +330,17 @@ public class Player : MonoBehaviour
                 transform.localScale = Vector3.one;
             }
             PlayAnimation("player_run_" + suffix);
+            if (!inKitchen)
+            {
+                if (!SoundManager.i.moveLoop.isPlaying)
+                {
+                    SoundManager.i.moveLoop.Play();
+                }
+            } else
+            {
+                SoundManager.i.moveLoop.Stop();
+            }
+
         }
     }
     void PlayAnimation(string animName)
@@ -375,6 +391,7 @@ public class Player : MonoBehaviour
     {
         if (canBeHurt)
         {
+            SoundManager.i.Play("snd_crashperson", .1f, .8f);
             Debug.Log("Hurt! " + realSpeed);
 
             canBeHurt = false;
@@ -455,6 +472,7 @@ public class Player : MonoBehaviour
 
     public void Slide(float modifier, Color color)
     {
+        SoundManager.i.Play("snd_slip", .05f, .8f);
         //sr.transform.DOComplete();
         //sr.transform.DOLocalRotate(new Vector3(0, 0, 360), .3f, RotateMode.LocalAxisAdd).OnComplete(() => sr.transform.localRotation = Quaternion.identity);
         realSpeed *= modifier;

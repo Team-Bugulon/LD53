@@ -198,6 +198,7 @@ public class GameManager : MonoBehaviour
         SoundManager.i.MusicOut();
         yield return new WaitForSeconds(.75f);
         player.win = true;
+        SoundManager.i.Play("snd_hehe", 0, .8f);
         yield return new WaitForSeconds(1.5f);
         UIManager.i.LevelWinScreen();
     }

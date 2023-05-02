@@ -52,6 +52,7 @@ public class Plate : MonoBehaviour
 
     public void Magnetize(GameObject target, Vector2 offset, float duration = .25f)
     {
+        SoundManager.i.Play("snd_pickup", .1f, .8f);
         circle.SetActive(false);
         magnetizeTarget = target;
         magnetizeOffset = offset;
@@ -114,6 +115,7 @@ public class Plate : MonoBehaviour
 
     void BreakHard()
     {
+        SoundManager.i.Play("snd_platedrop", .1f, .8f);
         plateRenderer.enabled = false;
         ps.Play();
         GameManager.i.BreakPlate(dishType);
@@ -124,6 +126,7 @@ public class Plate : MonoBehaviour
 
     void BreakSoft()
     {
+        SoundManager.i.Play("snd_platedrop", .1f, .8f);
         plateRenderer.enabled = false;
         ps.Play();
         GameManager.i.BreakPlate(dishType);

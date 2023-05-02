@@ -42,7 +42,7 @@ public class SoundManager : MonoBehaviour
     AudioSource aSource;
 
     [SerializeField] AudioSource loopScore;
-    [SerializeField] AudioSource moveLoop;
+    public AudioSource moveLoop;
     [SerializeField] AudioSource music;
 
     string musicPlaying = "";
@@ -120,7 +120,7 @@ public class SoundManager : MonoBehaviour
     public void MusicIn()
     {
         music.DOComplete();
-        music.DOFade(.8f, 1).SetEase(Ease.Linear).SetUpdate(true);
+        music.DOFade(.8f, .8f).SetEase(Ease.Linear).SetUpdate(true);
     }
     
     public void MusicOut()
@@ -146,7 +146,7 @@ public class SoundManager : MonoBehaviour
         {
             Debug.Log("gusic " + musicName);
             music.DOKill();
-            music.DOFade(0, 1).SetEase(Ease.Linear).SetUpdate(true).OnComplete(() =>
+            music.DOFade(0, .8f).SetEase(Ease.Linear).SetUpdate(true).OnComplete(() =>
             {
                 music.clip = musicsClips[musicName];
                 music.Play();

@@ -68,7 +68,18 @@ public class TransitionManager : MonoBehaviour
     public void LoadLevel(int level = -1)
     {
         if (level > -1) SaveManager.i.level = level;
-        StartCoroutine(LoadLevelCoroutine());
+
+        if (SaveManager.i.level > 19)
+        {
+            StartCoroutine(LoadBackroomsCoroutine());
+        }
+        else
+        {
+            StartCoroutine(LoadLevelCoroutine());
+        }
+
+
+        
     }
 
     IEnumerator LoadLevelCoroutine()
@@ -76,6 +87,13 @@ public class TransitionManager : MonoBehaviour
         TransiIn();
         yield return new WaitForSecondsRealtime(2f);
         UnityEngine.SceneManagement.SceneManager.LoadScene(2);
+    }
+
+    IEnumerator LoadBackroomsCoroutine()
+    {
+        TransiIn();
+        yield return new WaitForSecondsRealtime(2f);
+        UnityEngine.SceneManagement.SceneManager.LoadScene(3);
     }
 
     public void MainMenu()

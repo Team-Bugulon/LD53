@@ -44,12 +44,16 @@ public class Titlescreen : MonoBehaviour
     public List<Sprite> kyurs;
     public List<Sprite> starss;
 
+    public TMPro.TextMeshPro starsText;
+
+    public GameObject cup;
+
     int totalScore = 0;
 
     // Start is called before the first frame update
     void Start()
     {
-        TransitionManager.i.TransiOut();
+        TransitionManager.i.TransiOut(.5f);
 
         foreach (Transform bobibou in levelSelectButtonContainer)
         {
@@ -62,9 +66,21 @@ public class Titlescreen : MonoBehaviour
             bobus.levelID = i;
             bobus.transform.parent = levelSelectButtonContainer;
             bobus.transform.localPosition = new Vector2(i % 5 * 1.5f, -Mathf.FloorToInt(i / 5) * 1.5f);
-            totalScore += bobus.score;
         }
 
+        totalScore = 0;
+        for (int i = 0; i < 20; i++)
+        {
+            int score = SaveManager.i.GetScore(i);
+            totalScore += score;
+        }
+
+        starsText.text = "<size=.5>" + totalScore.ToString() + "/60";
+
+        if (totalScore >= 60)
+        {
+            cup.SetActive(true);
+        }
 
         MainMenu();
         SoundManager.i.PlayMusic("mus_menushort");
