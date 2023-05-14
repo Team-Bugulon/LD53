@@ -549,9 +549,9 @@ Camera:
   m_FocalLength: 50
   m_NormalizedViewPortRect:
     serializedVersion: 2
-    x: 0
+    x: 0.11080836
     y: 0
-    width: 1
+    width: 0.7782824
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
@@ -604,7 +604,7 @@ MonoBehaviour:
   m_AssetsPPU: 32
   m_RefResolutionX: 640
   m_RefResolutionY: 360
-  m_CropFrame: 3
+  m_CropFrame: 4
   m_GridSnapping: 2
   m_UpscaleRT: 0
   m_PixelSnapping: 0
